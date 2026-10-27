@@ -1,0 +1,1001 @@
+<!doctype html>
+<html lang="pt-BR" class="nojs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>S 1000 RR 2026 · BMW Ferreira Jardins (conceito)</title>
+<meta name="description" content="Projeto conceitual: a nova S 1000 RR 2026 apresentada num showroom escuro nos Jardins, em São Paulo. Visitas privadas com hora marcada.">
+<meta name="theme-color" content="#0F1217">
+<!-- DEPLOY STEP: troque og:url e og:image por endereços absolutos do site publicado -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="S 1000 RR 2026 · BMW Ferreira Jardins (conceito)">
+<meta property="og:description" content="Uma apresentação particular, com as luzes acesas uma por vez.">
+<meta property="og:url" content="./">
+<meta property="og:image" content="assets/og.png">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230F1217'/%3E%3Cpath d='M22 50 32 12 42 50' fill='none' stroke='%238FB0CC' stroke-width='2.5' opacity='.55'/%3E%3Cpath d='M25 20h16M25 20v26M25 32h12' fill='none' stroke='%23ECE9E3' stroke-width='4.5' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@125,300;125,600&family=Instrument+Sans:wght@400;500&family=JetBrains+Mono:wght@400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#0F1217;
+  --panel:#161B22;
+  --panel-2:#1B212A;
+  --accent:#8FB0CC;
+  --accent-hover:#A9C4DB;
+  --accent-muted:rgba(143,176,204,.16);
+  --text-secondary:#9AA1AA;
+  --text-primary:#ECE9E3;
+  --line:rgba(236,233,227,.10);
+  --line-strong:#5A626D;
+  --ease-out:cubic-bezier(.16,1,.3,1);
+  --ease-io:cubic-bezier(.65,0,.35,1);
+  --tshadow:0 1px 2px rgba(5,6,9,.95),0 3px 12px rgba(5,6,9,.78),0 10px 44px rgba(5,6,9,.8);
+  --display:"Archivo","Helvetica Neue",Arial,sans-serif;
+  --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{overflow-x:hidden;overflow-x:clip;scroll-behavior:smooth;background:var(--canvas)}
+body{margin:0;overflow-x:hidden;overflow-x:clip;background:var(--canvas);color:var(--text-primary);font-family:var(--body);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased;animation:pagein 1.1s var(--ease-out) both}
+@keyframes pagein{from{opacity:0}to{opacity:1}}
+img,svg{display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-stretch:125%;font-weight:300;letter-spacing:-.01em;line-height:1.08;margin:0}
+p{margin:0}
+.sr{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
+.skip{position:fixed;left:16px;top:-60px;z-index:100;background:var(--accent);color:var(--canvas);padding:10px 16px;border-radius:8px;font-weight:500;text-decoration:none;transition:top .3s var(--ease-out)}
+.skip:focus{top:16px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
+.kicker{font-family:var(--mono);font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-secondary)}
+
+/* fundo fixo: um lugar, nao uma pilha de secoes */
+.env{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.env::before{content:"";position:absolute;width:90vmax;height:90vmax;left:-20vmax;top:-30vmax;border-radius:50%;background:radial-gradient(circle,rgba(143,176,204,.07),rgba(143,176,204,0) 62%);animation:drift 90s var(--ease-io) -24s infinite alternate}
+.env::after{content:"";position:absolute;inset:0;opacity:.07;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(60vw,70vh)}}
+
+/* navegacao */
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px clamp(16px,4vw,48px);transition:background .5s var(--ease-out),border-color .5s var(--ease-out),backdrop-filter .5s;border-bottom:1px solid transparent}
+.nav.solid{background:rgba(15,18,23,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line)}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+.brand svg{width:30px;height:30px}
+.brand b{font-family:var(--display);font-stretch:125%;font-weight:600;font-size:15px;letter-spacing:.24em}
+.brand small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--text-secondary);text-transform:uppercase;line-height:1.2}
+.nav ul{display:flex;gap:28px;list-style:none;margin:0;padding:0}
+.nav ul a{text-decoration:none;font-size:14px;color:var(--text-secondary);transition:color .3s var(--ease-out)}
+.nav ul a:hover{color:var(--text-primary)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;font-family:var(--body);font-weight:500;font-size:15px;text-decoration:none;border-radius:999px;padding:13px 24px;border:1px solid transparent;cursor:pointer;transition:background .35s var(--ease-out),color .35s var(--ease-out),border-color .35s var(--ease-out),transform .35s var(--ease-out);text-shadow:none}
+.btn-primary{background:var(--accent);color:var(--canvas)}
+.btn-primary:hover{background:var(--accent-hover);transform:translateY(-1px)}
+.btn-ghost{border-color:var(--line-strong);color:var(--text-primary);background:rgba(15,18,23,.35)}
+.btn-ghost:hover{border-color:var(--text-primary)}
+.btn-sm{padding:9px 18px;font-size:14px}
+@media (pointer:coarse){.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center}}
+@media (max-width:860px){.nav ul{display:none}}
+@media (max-width:480px){.brand small{display:none}.nav .btn-sm{white-space:nowrap;padding:9px 14px}.racing{display:none}}
+
+/* ===== HERO: o showroom no escuro ===== */
+.hero{position:relative;height:600vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0E1116}
+.room{position:absolute;inset:0;width:100%;height:100%}
+.spot,.beam,.pool,#amb,#drl{opacity:0}
+.dust{position:absolute;inset:0;pointer-events:none;opacity:0}
+.dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:#dfe7ef;opacity:.0;animation:mote 14s linear infinite}
+.dust i:nth-child(odd){width:2px;height:2px}
+@keyframes mote{0%{transform:translate(0,0);opacity:0}15%{opacity:.5}85%{opacity:.35}100%{transform:translate(18px,-120px);opacity:0}}
+.scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 55%,rgba(10,12,16,0) 40%,rgba(10,12,16,.62) 100%)}
+.band{position:absolute;z-index:2;top:clamp(84px,14vh,140px);width:min(560px,40vw);opacity:0;text-shadow:var(--tshadow);pointer-events:none}
+.band.on{pointer-events:auto}
+.band::before{content:"";position:absolute;inset:-22% -18%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 74% 62% at 50% 50%,rgba(5,6,9,.62) 0%,rgba(5,6,9,.42) 46%,rgba(5,6,9,0) 76%)}
+.band.left{left:clamp(16px,6vw,96px)}
+.band.right{right:clamp(16px,6vw,96px);text-align:right}
+.band.center{left:50%;transform:translateX(-50%);text-align:center;width:min(760px,86vw)}
+.band .kicker{display:block;margin-bottom:14px;color:#B9BFC6}
+.band h2,.band .h{font-size:clamp(30px,3.6vw,56px);font-family:var(--display);font-stretch:125%;font-weight:300;line-height:1.08;letter-spacing:-.01em}
+.band.center h2{font-size:clamp(30px,3.7vw,58px)}
+.band.b5{top:0;bottom:0;left:0;right:0;width:auto;transform:none;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:clamp(92px,12vh,124px) 16px clamp(44px,7vh,72px)}
+.band.b5 .top{width:min(820px,100%)}
+.band.b5::before{inset:0;background:radial-gradient(ellipse 46% 30% at 50% 18%,rgba(5,6,9,.66) 0%,rgba(5,6,9,.42) 50%,rgba(5,6,9,0) 80%)}
+.band.b5 .cta{margin-top:0}
+.band .h strong,.band h2 strong{font-weight:600}
+.band p.sub{margin-top:16px;font-size:clamp(15px,1.2vw,18px);color:#C9CDD2;max-width:42ch}
+.band.right p.sub{margin-left:auto}
+.band.center p.sub{margin-left:auto;margin-right:auto}
+.band .cta{display:flex;gap:12px;justify-content:center;margin-top:28px;flex-wrap:wrap}
+.band .btn{text-shadow:none}
+.w{display:inline-block;white-space:nowrap}
+.c{display:inline-block}
+/* entradas: so transform e opacity, guiadas por --k */
+.fx-rise .w{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);transform:translateY(calc((1 - var(--kc))*.55em))}
+.fx-snap .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*3,1);opacity:var(--kc);transform:translateX(calc((1 - var(--kc))*var(--jx,0px)))}
+.fx-scatter .c{--kc:clamp(0,(var(--k,0) - var(--th,0))*2.6,1);opacity:var(--kc);transform:translate(calc((1 - var(--kc))*var(--jx,0px)),calc((1 - var(--kc))*var(--jy,0px))) rotate(calc((1 - var(--kc))*var(--jr,0deg)))}
+.pair{display:grid}
+.pair>*{grid-area:1/1}
+.pair .soft{filter:blur(10px);opacity:calc(1 - var(--k,0))}
+.pair .sharp{opacity:var(--k,0);transform:scale(calc(.97 + .03*var(--k,0)))}
+.band .meta{opacity:clamp(0,(var(--k,0) - .45)*3,1);transform:translateY(calc((1 - clamp(0,(var(--k,0) - .45)*3,1))*10px))}
+.b5 .sub{opacity:clamp(0,(var(--k,0) - .62)*4,1);transform:translateY(calc((1 - clamp(0,(var(--k,0) - .62)*4,1))*12px))}
+.b5 .cta{opacity:clamp(0,(var(--k,0) - .78)*5,1);transform:translateY(calc((1 - clamp(0,(var(--k,0) - .78)*5,1))*12px))}
+.cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:10px;color:var(--text-secondary);font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase}
+.cue span{display:block;width:1px;height:44px;background:linear-gradient(var(--text-secondary),transparent);transform-origin:top;animation:cue 2.6s var(--ease-io) -1s infinite}
+@keyframes cue{0%{transform:scaleY(0);opacity:1}60%{transform:scaleY(1);opacity:1}100%{transform:scaleY(1);opacity:0}}
+.hud{position:absolute;right:clamp(16px,4vw,48px);bottom:28px;font-family:var(--mono);font-size:11px;letter-spacing:.16em;color:var(--text-secondary);text-transform:uppercase;padding:8px 12px;border-radius:10px;background:rgba(8,9,13,.55);border:1px solid rgba(96,104,120,.3);backdrop-filter:blur(10px);text-shadow:0 1px 3px rgba(5,5,10,.85)}
+@media (max-height:560px){.cue,.hud{display:none}}
+@media (orientation:portrait) and (max-width:1024px){
+  .hero{height:520vh}
+  .band,.band.left,.band.right{left:16px;right:16px;width:auto;text-align:left;top:clamp(86px,12vh,120px)}
+  .band.right p.sub{margin-left:0}
+  .band h2,.band .h{font-size:clamp(28px,8vw,40px)}
+  .band.center h2{font-size:clamp(25px,7vw,40px)}
+  .hud{display:none}
+}
+
+/* ===== secoes ===== */
+main{position:relative}
+.sec{position:relative;padding:clamp(96px,14vh,160px) clamp(16px,6vw,96px)}
+.sec-head{max-width:1200px;margin:0 auto 56px}
+.sec-head h2{font-size:clamp(32px,4vw,58px);margin-top:16px;max-width:18ch}
+.sec-head p{margin-top:18px;color:var(--text-secondary);max-width:56ch}
+.wrap{max-width:1200px;margin:0 auto}
+/* entradas coreografadas */
+.rv>*{opacity:0;transform:translateY(22px);transition:opacity .9s var(--ease-out),transform .9s var(--ease-out);transition-delay:calc(var(--i,0)*90ms)}
+.rv.in>*{opacity:1;transform:none}
+.rv.settled>*{transition-delay:0s!important}
+
+/* A maquina */
+.racing{position:absolute;left:0;right:0;top:0;height:160px;width:100%;pointer-events:none}
+.racing path{fill:none;stroke:var(--line-strong);stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1}
+.specs{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.spec{padding:40px 24px 36px;border-left:1px solid var(--line);position:relative}
+.spec:first-child{border-left:0;padding-left:0}
+.spec .num{font-family:var(--display);font-stretch:125%;font-weight:300;font-size:clamp(40px,5vw,76px);line-height:1;display:flex;align-items:baseline;gap:8px}
+.spec .num small{font-family:var(--mono);font-size:13px;color:var(--text-secondary);letter-spacing:.1em}
+.spec p{margin-top:14px;font-size:15px;color:var(--text-secondary);max-width:24ch}
+.spec::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent);opacity:0}
+.live .spec::after{animation:glint 7s var(--ease-io) infinite}
+.live .spec:nth-child(2)::after{animation-delay:-5.2s}
+.live .spec:nth-child(3)::after{animation-delay:-3.5s}
+.live .spec:nth-child(4)::after{animation-delay:-1.7s}
+@keyframes glint{0%,70%,100%{opacity:0}85%{opacity:.55}}
+.spec-note{margin-top:28px;color:var(--text-secondary);font-size:15px;max-width:70ch}
+@media (max-width:860px){.specs{grid-template-columns:1fr 1fr}.spec:nth-child(3){border-left:0;padding-left:0}.spec:nth-child(n+3){border-top:1px solid var(--line)}}
+
+/* Versoes */
+.versions{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
+.showcase{position:relative;aspect-ratio:16/10;border-radius:20px;background:radial-gradient(ellipse 70% 60% at 50% 38%,#232A33,#12161C 72%);border:1px solid var(--line);overflow:hidden}
+.showcase::before{content:"";position:absolute;left:50%;top:-10%;width:60%;height:110%;transform:translateX(-50%);background:linear-gradient(rgba(236,240,245,.10),rgba(236,240,245,0) 80%);clip-path:polygon(44% 0,56% 0,100% 100%,0 100%);opacity:.8}
+.live .showcase::before{animation:breathe 6s var(--ease-io) -2s infinite alternate}
+@keyframes breathe{from{opacity:.55}to{opacity:.95}}
+.showcase svg{position:absolute;inset:6% 4% 4%;width:92%;height:90%}
+.showcase .paint{transition:fill .8s var(--ease-out)}
+.vlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.vlist li{border-bottom:1px solid var(--line)}
+.vbtn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:28px 1fr auto;align-items:baseline;gap:18px;padding:22px 8px;transition:background .4s var(--ease-out)}
+.vbtn:focus-visible{outline:2px solid var(--accent);outline-offset:-2px;border-radius:8px}
+.vbtn:hover,.vbtn[aria-pressed="true"]{background:rgba(236,233,227,.03)}
+.sw{width:18px;height:18px;border-radius:50%;border:1px solid rgba(236,233,227,.35);transform:translateY(3px)}
+.vname{font-family:var(--display);font-stretch:125%;font-size:19px;font-weight:300}
+.vname em{display:block;font-style:normal;font-family:var(--body);font-size:14px;color:var(--text-secondary);margin-top:4px}
+.vprice{font-family:var(--mono);font-size:15px;color:var(--text-primary);white-space:nowrap}
+.vbtn[aria-pressed="true"] .vname{font-weight:600}
+.vbtn[aria-pressed="true"] .sw{box-shadow:0 0 0 3px var(--canvas),0 0 0 4px var(--accent)}
+.vnote{margin-top:18px;font-size:14px;color:var(--text-secondary)}
+@media (max-width:860px){.versions{grid-template-columns:1fr}}
+
+/* Sem surpresas */
+.qa{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line);border-radius:20px;overflow:hidden}
+.qa article{background:var(--canvas);padding:clamp(28px,4vw,48px)}
+.qa h3{font-size:clamp(20px,2vw,26px);font-weight:300}
+.qa h3 span{color:var(--text-secondary);font-family:var(--mono);font-size:12px;letter-spacing:.16em;display:block;margin-bottom:14px}
+.qa p{margin-top:14px;color:#C3C7CC;max-width:44ch}
+@media (max-width:760px){.qa{grid-template-columns:1fr}}
+
+/* Visita */
+.steps{position:relative;display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,4vw,56px)}
+.trail{position:absolute;left:0;right:0;top:58px;height:20px;width:100%;pointer-events:none}
+.trail path{fill:none;stroke:var(--accent);stroke-opacity:.55;stroke-width:1.2;stroke-dasharray:1;stroke-dashoffset:1}
+.step .ico{width:116px;height:116px;border-radius:50%;background:var(--panel);border:1px solid var(--line);display:grid;place-items:center;position:relative}
+.step .ico svg{width:56px;height:56px}
+.step .ico svg *{fill:none;stroke:var(--text-primary);stroke-width:1.4;stroke-linecap:round;stroke-linejoin:round}
+.step .ico::after{content:"";position:absolute;inset:-1px;border-radius:50%;box-shadow:0 0 30px rgba(143,176,204,.25);opacity:0}
+.live .step .ico::after{animation:halo 6s var(--ease-io) infinite}
+.live .step:nth-child(3) .ico::after{animation-delay:-4s}
+.live .step:nth-child(4) .ico::after{animation-delay:-2s}
+@keyframes halo{0%,100%{opacity:0}50%{opacity:1}}
+.step .n{font-family:var(--mono);font-size:12px;letter-spacing:.18em;color:var(--text-secondary);margin-top:28px;display:block}
+.step h3{font-size:22px;margin-top:10px}
+.step p{margin-top:12px;color:var(--text-secondary);max-width:32ch}
+@media (max-width:860px){.steps{grid-template-columns:1fr}.trail{display:none}}
+
+/* Partida: o momento interativo */
+.ign{display:grid;grid-template-columns:auto 1fr;gap:clamp(40px,6vw,96px);align-items:center;max-width:1100px;margin:0 auto}
+.tach{position:relative;width:min(380px,80vw);aspect-ratio:1}
+.tach svg{width:100%;height:100%}
+.tach .track{fill:none;stroke:#252C35;stroke-width:10;stroke-linecap:round}
+.tach .fill{fill:none;stroke:var(--text-primary);stroke-width:10;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:1}
+.tach .red{fill:none;stroke:var(--accent);stroke-width:10;stroke-linecap:round;opacity:.35;transition:opacity .5s var(--ease-out)}
+.ign.done .tach .red{opacity:1}
+.tach .ticks line{stroke:#5A626D;stroke-width:2}
+.tach .lbl{fill:var(--text-secondary);font-family:var(--mono);font-size:13px}
+.tach .needle{transform-origin:200px 200px}
+.tach .needle line{stroke:var(--accent);stroke-width:3;stroke-linecap:round}
+.tach .hubc{fill:var(--panel);stroke:#5A626D}
+.readout{position:absolute;left:0;right:0;top:57%;text-align:center}
+.readout b{display:block;font-family:var(--display);font-stretch:125%;font-weight:300;font-size:clamp(26px,8vw,34px);line-height:1}
+.readout span{font-family:var(--mono);font-size:11px;letter-spacing:.2em;color:var(--text-secondary)}
+.hold{margin-top:36px;position:relative;overflow:hidden;user-select:none;-webkit-user-select:none;touch-action:none;min-width:260px}
+.hold::before{content:"";position:absolute;inset:0;background:var(--accent-hover);transform-origin:left;transform:scaleX(var(--hp,0));z-index:0}
+.hold span{position:relative;z-index:1}
+.ign-copy h2{font-size:clamp(30px,3.6vw,52px)}
+.ign-copy>p{margin-top:16px;color:var(--text-secondary);max-width:44ch}
+.inc{list-style:none;margin:32px 0 0;padding:0;display:grid;gap:12px}
+.inc li{display:flex;gap:14px;align-items:baseline;opacity:.18;transform:translateX(-6px);transition:opacity .7s var(--ease-out),transform .7s var(--ease-out)}
+.inc li::before{content:"";flex:none;width:8px;height:8px;border-radius:50%;border:1px solid var(--text-secondary);transform:translateY(-1px);transition:background .7s var(--ease-out),border-color .7s var(--ease-out)}
+.ign.done .inc li{opacity:1;transform:none}
+.ign.done .inc li::before{background:var(--accent);border-color:var(--accent)}
+.ign.done .inc li:nth-child(2){transition-delay:.15s}
+.ign.done .inc li:nth-child(3){transition-delay:.3s}
+.ign.done .inc li:nth-child(4){transition-delay:.45s}
+.ign.done .inc li:nth-child(2)::before{transition-delay:.15s}
+.ign.done .inc li:nth-child(3)::before{transition-delay:.3s}
+.ign.done .inc li:nth-child(4)::before{transition-delay:.45s}
+.ign .after{margin-top:28px;opacity:0;transform:translateY(8px);transition:opacity .7s var(--ease-out) .6s,transform .7s var(--ease-out) .6s;visibility:hidden}
+.ign.done .after{opacity:1;transform:none;visibility:visible}
+@media (max-width:860px){.ign{grid-template-columns:1fr;justify-items:center}.ign-copy{width:100%}}
+
+/* FAQ */
+.faq{max-width:900px;margin:0 auto}
+.faq details{border-bottom:1px solid var(--line)}
+.faq details:first-of-type{border-top:1px solid var(--line)}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:baseline;gap:24px;padding:26px 0;font-family:var(--display);font-stretch:125%;font-weight:300;font-size:clamp(18px,1.8vw,23px)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{flex:none;width:14px;height:14px;position:relative;transform:translateY(1px)}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:0;right:0;top:50%;height:1.5px;background:var(--text-secondary);transition:transform .45s var(--ease-out)}
+.faq summary i::after{transform:rotate(90deg)}
+.faq details[open] summary i::after{transform:rotate(0)}
+.faq .ans{padding:0 0 26px;color:#C3C7CC;max-width:62ch}
+
+/* Agendar */
+.book{display:grid;grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px);max-width:1200px;margin:0 auto;align-items:start}
+.book-copy h2{font-size:clamp(34px,4.4vw,64px)}
+.book-copy p{margin-top:18px;color:var(--text-secondary);max-width:40ch}
+.book-copy .addr{margin-top:36px;font-family:var(--mono);font-size:13px;letter-spacing:.08em;color:var(--text-secondary);line-height:1.9}
+form{background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:clamp(24px,3.5vw,44px);display:grid;gap:20px;position:relative}
+label,.lg{display:block;font-family:var(--mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-secondary);margin-bottom:8px}
+input,select{width:100%;font:inherit;font-size:16px;color:var(--text-primary);background:var(--canvas);border:1px solid var(--line-strong);border-radius:12px;padding:14px 16px;transition:border-color .3s var(--ease-out)}
+input:focus,select:focus{border-color:var(--accent);outline:none}
+input::placeholder{color:#6E7580}
+select{appearance:none;background-image:linear-gradient(45deg,transparent 50%,var(--text-secondary) 50%),linear-gradient(135deg,var(--text-secondary) 50%,transparent 50%);background-position:calc(100% - 22px) 50%,calc(100% - 16px) 50%;background-size:6px 6px;background-repeat:no-repeat}
+fieldset{border:0;margin:0;padding:0}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chips label{margin:0;text-transform:none;letter-spacing:0;font-family:var(--body);font-size:15px;color:var(--text-primary)}
+.chips input{position:absolute;opacity:0;width:1px;height:1px}
+.chips span{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid var(--line-strong);border-radius:999px;cursor:pointer;transition:border-color .3s var(--ease-out),background .3s var(--ease-out)}
+.chips input:checked+span{border-color:var(--accent);background:var(--accent-muted)}
+.chips input:focus-visible+span{outline:2px solid var(--accent);outline-offset:2px}
+form .btn{width:100%;margin-top:6px}
+.fine{font-size:13px;color:var(--text-secondary)}
+.ok{display:none}
+form.sent>*:not(.ok){display:none}
+form.sent .ok{display:block;animation:okin .8s var(--ease-out) both}
+@keyframes okin{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+.ok h3{font-size:28px;margin-top:12px}
+.ok p{margin-top:14px;color:var(--text-secondary)}
+@media (max-width:860px){.book{grid-template-columns:1fr}}
+
+footer{padding:64px clamp(16px,6vw,96px) 48px;border-top:1px solid var(--line)}
+.foot{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.4fr;gap:40px;align-items:start}
+.foot p{font-size:14px;color:var(--text-secondary);max-width:68ch}
+.foot p+p{margin-top:12px}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+
+/* pausas */
+body.paused *,body.paused *::before,body.paused *::after{animation-play-state:paused!important}
+.dust:not(.live) i{animation-play-state:paused}
+
+/* movimento reduzido: tudo no estado final */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important;transition-delay:0s!important;scroll-behavior:auto!important}
+  .hero{height:100vh}
+  .band{opacity:0!important}
+  .band.b5{opacity:1!important;--k:1!important}
+  .cue{display:none}
+  .rv>*{opacity:1;transform:none}
+  .racing path,.trail path{stroke-dashoffset:0!important}
+}
+html.nojs .band{opacity:0}
+html.nojs .band.b5{opacity:1;--k:1}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Pular para o conteúdo</a>
+<div class="env" aria-hidden="true"></div>
+
+<nav class="nav" aria-label="Principal">
+  <a class="brand" href="#top" aria-label="BMW Ferreira, início">
+    <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 52 32 10 44 52" fill="none" stroke="#8FB0CC" stroke-width="1.6" opacity=".6"/><path d="M25 20h15M25 20v26M25 32h11" fill="none" stroke="#ECE9E3" stroke-width="3.4" stroke-linecap="round"/></svg>
+    <span><b>FERREIRA</b><small>Jardins · São Paulo</small></span>
+  </a>
+  <ul>
+    <li><a href="#maquina">A máquina</a></li>
+    <li><a href="#versoes">Versões</a></li>
+    <li><a href="#visita">A visita</a></li>
+    <li><a href="#perguntas">Perguntas</a></li>
+  </ul>
+  <a class="btn btn-primary btn-sm" href="#agendar">Agendar visita</a>
+</nav>
+
+<header class="hero" id="top">
+  <h1 class="sr">A nova BMW S 1000 RR 2026 na BMW Ferreira, Jardins, São Paulo. Projeto conceitual.</h1>
+  <div class="stage">
+    <svg class="room" id="room" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
+      <defs>
+        <radialGradient id="gWall" cx="50%" cy="58%" r="70%">
+          <stop offset="0" stop-color="#171C23"/><stop offset=".6" stop-color="#11151A"/><stop offset="1" stop-color="#0E1116"/>
+        </radialGradient>
+        <linearGradient id="gFloor" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#151A20"/><stop offset="1" stop-color="#0B0E12"/>
+        </linearGradient>
+        <linearGradient id="gBeam" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#E9EFF5" stop-opacity=".20"/><stop offset=".7" stop-color="#E9EFF5" stop-opacity=".06"/><stop offset="1" stop-color="#E9EFF5" stop-opacity=".03"/>
+        </linearGradient>
+        <radialGradient id="gPool"><stop offset="0" stop-color="#E9EFF5" stop-opacity=".22"/><stop offset="1" stop-color="#E9EFF5" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gSpot"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#46505C"/><stop offset=".45" stop-color="#222830"/><stop offset="1" stop-color="#101318"/>
+        </linearGradient>
+        <linearGradient id="gMetal" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#9AA3AE"/><stop offset=".5" stop-color="#454C56"/><stop offset="1" stop-color="#1D2127"/>
+        </linearGradient>
+        <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="#BCD0E2" stop-opacity=".38"/><stop offset="1" stop-color="#BCD0E2" stop-opacity=".08"/>
+        </linearGradient>
+        <linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
+        </linearGradient>
+        <filter id="fGlow" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
+        <mask id="lit" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
+          <rect width="1600" height="900" fill="#2a2a2a"/>
+          <ellipse class="spot" id="s1" cx="574" cy="520" rx="270" ry="300" fill="url(#gSpot)"/>
+          <ellipse class="spot" id="s2" cx="810" cy="455" rx="250" ry="290" fill="url(#gSpot)"/>
+          <ellipse class="spot" id="s3" cx="1066" cy="520" rx="270" ry="300" fill="url(#gSpot)"/>
+          <rect id="amb" width="1600" height="900" fill="#fff"/>
+        </mask>
+        <mask id="reflFade" maskUnits="userSpaceOnUse" x="0" y="730" width="1600" height="170">
+          <rect x="0" y="730" width="1600" height="170" fill="url(#gFade)"/>
+        </mask>
+
+        <!-- a moto, perfil lateral, coordenadas locais 0..1000 x 0..560, chao em y=548 -->
+        <g id="bikeArt">
+          <!-- roda traseira -->
+          <circle cx="790" cy="430" r="118" fill="#090B0E"/>
+          <circle cx="790" cy="430" r="114" fill="none" stroke="#262C34" stroke-width="2"/>
+          <circle cx="790" cy="430" r="90" fill="#13171C" stroke="#4E5763" stroke-width="2"/>
+          <g transform="translate(790 430)" fill="#59626E">
+            <path d="M-6-18-3-86 3-86 6-18Z"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(72)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(144)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(216)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(288)"/>
+          </g>
+          <circle cx="790" cy="430" r="48" fill="none" stroke="#7A848F" stroke-width="5"/>
+          <circle cx="790" cy="430" r="16" fill="#69727D"/>
+          <rect x="778" y="470" width="30" height="14" rx="5" fill="#8A939E"/>
+          <!-- corrente -->
+          <path d="M598 334 790 392M598 366 790 470" stroke="#2C323A" stroke-width="3" fill="none"/>
+          <circle cx="790" cy="430" r="40" fill="none" stroke="#2C323A" stroke-width="3"/>
+          <!-- balanca -->
+          <path d="M596 310 642 316 808 416 802 446 782 448 598 352Z" fill="url(#gMetal)"/>
+          <path d="M616 352C690 402 740 430 792 442" stroke="#7A848F" stroke-width="3" fill="none"/>
+          <!-- roda dianteira -->
+          <circle cx="205" cy="430" r="118" fill="#090B0E"/>
+          <circle cx="205" cy="430" r="114" fill="none" stroke="#262C34" stroke-width="2"/>
+          <circle cx="205" cy="430" r="90" fill="#13171C" stroke="#4E5763" stroke-width="2"/>
+          <g transform="translate(205 430)" fill="#59626E">
+            <path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(36)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(108)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(180)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(252)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(324)"/>
+          </g>
+          <circle cx="205" cy="430" r="70" fill="none" stroke="#7A848F" stroke-width="12" opacity=".9"/>
+          <circle cx="205" cy="430" r="70" fill="none" stroke="#14181D" stroke-width="5" stroke-dasharray="3 11"/>
+          <circle cx="205" cy="430" r="16" fill="#69727D"/>
+          <!-- garfo -->
+          <path d="M196 426 218 436 334 196 314 186Z" fill="url(#gMetal)"/>
+          <path d="M190 420 224 436 272 334 240 318Z" fill="#2B3139"/>
+          <rect x="220" y="366" width="36" height="18" rx="6" transform="rotate(-62 238 375)" fill="#A3ACB6"/>
+          <!-- paralama -->
+          <path d="M140 345C160 300 230 290 272 318L266 330C228 306 172 314 152 352Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
+          <!-- quadro -->
+          <path d="M335 190 478 198 612 302 604 338 585 340 468 232 340 222Z" fill="#2E353E"/><path d="M340 192 478 200 610 304" stroke="#6C7682" stroke-width="1.5" fill="none"/>
+          <!-- motor -->
+          <path d="M440 240 585 262 602 382 560 398 470 398 448 350Z" fill="#191E24"/>
+          <path d="M462 300H575M466 318H580M470 336H584M474 354H588" stroke="#2F3740" stroke-width="2"/>
+          <!-- escapamento -->
+          <path d="M462 398C500 412 560 414 600 404L604 416C560 428 498 426 458 410Z" fill="#3A414B"/>
+          <path d="M596 396 708 360C722 357 731 372 722 384L606 420Z" fill="url(#gMetal)"/>
+          <ellipse cx="718" cy="372" rx="9" ry="11" transform="rotate(-18 718 372)" fill="#08090B" stroke="#9AA3AE" stroke-width="1.5"/>
+          <!-- carenagem inferior -->
+          <path d="M292 316C305 360 334 394 380 404L556 406C566 404 572 396 566 388L470 398 452 352 440 300Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
+          <!-- carenagem lateral -->
+          <path d="M230 238C244 214 274 196 306 184L420 164 452 222C466 260 462 300 446 330L398 366C356 360 318 330 286 300 258 276 236 258 230 238Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
+          <path d="M360 270 420 262 430 300 372 306Z" fill="#0B0E12"/><path d="M252 262C300 300 350 336 400 360" stroke="#0C0F13" stroke-width="3" fill="none" opacity=".8"/>
+          <!-- asas -->
+          <path d="M268 252 338 236 344 246 276 264Z" fill="url(#gMetal)"/>
+          <path d="M282 278 346 264 350 273 290 290Z" fill="url(#gMetal)"/>
+          <!-- bico e farol -->
+          <path d="M222 246C226 232 238 220 256 212L300 194 306 206 262 228C246 236 234 244 228 252Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
+          <path d="M236 240 290 214 294 221 242 248Z" fill="#202831"/>
+          <!-- bolha -->
+          <path d="M296 190 384 118C396 110 410 114 412 126L424 166 306 188Z" fill="url(#gGlass)"/>
+          <!-- retrovisor e semiguidao -->
+          <path d="M330 176 366 166 370 176 334 186Z" fill="#20262D"/>
+          <path d="M402 160 372 170" stroke="#7A848F" stroke-width="4" stroke-linecap="round"/>
+          <!-- tanque -->
+          <path d="M404 154C430 112 520 98 578 124 592 134 598 152 596 172L470 192 420 172Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
+          <!-- banco -->
+          <path d="M586 160C622 170 664 174 704 170L708 182C664 188 620 188 592 186Z" fill="#0E1115" stroke="#2A3038"/>
+          <!-- lateral sob o banco -->
+          <path d="M592 186 704 190C700 215 680 235 650 245L612 300 585 262Z" fill="#1B2027"/>
+          <!-- rabeta -->
+          <path d="M696 168 860 120C869 119 872 127 866 133L836 170C800 196 752 212 708 214L694 190Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
+          <path d="M832 158 862 130 864 137 838 164Z" fill="#4A2226"/><path d="M740 184 836 154" stroke="#0C0F13" stroke-width="2"/>
+          <path d="M700 192C720 215 740 230 760 240L640 250 610 230Z" fill="#11151A"/>
+          <!-- pedaleira -->
+          <path d="M618 296 662 300" stroke="#8A939E" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="640" cy="298" r="5" fill="#8A939E"/>
+          <!-- reflexos de luz -->
+          <g fill="none" stroke="#D5DDE6" stroke-width="1.6" stroke-linecap="round" opacity=".55">
+            <path d="M94 390A118 118 0 0 1 288 347"/>
+            <path d="M679 390A118 118 0 0 1 873 347"/>
+            <path d="M414 148C440 116 520 104 572 128"/>
+            <path d="M704 168 858 122"/>
+            <path d="M300 188 384 120"/>
+            <path d="M234 236C248 216 276 198 306 186"/>
+            <path d="M300 206C340 240 390 280 444 320" opacity=".45"/>
+            <path d="M270 252 338 237"/>
+            <path d="M304 360C330 388 356 400 382 404" opacity=".5"/>
+          </g>
+        </g>
+      </defs>
+
+      <rect width="1600" height="730" fill="url(#gWall)"/>
+      <rect y="730" width="1600" height="170" fill="url(#gFloor)"/>
+      <path d="M0 730.5H1600" stroke="#2A313A" stroke-width="1"/>
+
+      <g id="beams">
+        <g class="beam" id="b1"><polygon points="538,0 610,0 830,730 318,730" fill="url(#gBeam)" opacity=".55"/><polygon points="556,0 592,0 744,730 404,730" fill="url(#gBeam)"/></g>
+        <g class="beam" id="b2"><polygon points="774,0 846,0 1066,730 554,730" fill="url(#gBeam)" opacity=".55"/><polygon points="792,0 828,0 980,730 640,730" fill="url(#gBeam)"/></g>
+        <g class="beam" id="b3"><polygon points="1030,0 1102,0 1322,730 810,730" fill="url(#gBeam)" opacity=".55"/><polygon points="1048,0 1084,0 1236,730 896,730" fill="url(#gBeam)"/></g>
+      </g>
+      <ellipse class="pool" id="p1" cx="574" cy="738" rx="300" ry="34" fill="url(#gPool)"/>
+      <ellipse class="pool" id="p2" cx="810" cy="738" rx="300" ry="34" fill="url(#gPool)"/>
+      <ellipse class="pool" id="p3" cx="1066" cy="738" rx="300" ry="34" fill="url(#gPool)"/>
+
+      <g id="cam">
+        <g mask="url(#lit)">
+          <g mask="url(#reflFade)" opacity=".16">
+            <use href="#bikeArt" transform="translate(0 1460) scale(1 -1) translate(330 215) scale(.94)"/>
+          </g>
+          <use href="#bikeArt" transform="translate(330 215) scale(.94)"/>
+        </g>
+        <g id="drl" transform="translate(330 215) scale(.94)">
+          <path d="M236 240 290 214 294 221 242 248Z" fill="#EAF2FF" filter="url(#fGlow)"/>
+          <path d="M238 240 290 215 293 220 242 246Z" fill="#F4F8FF"/>
+        </g>
+      </g>
+    </svg>
+
+    <div class="dust" id="dust" aria-hidden="true">
+      <i style="left:34%;top:62%;animation-delay:-2s"></i><i style="left:37%;top:48%;animation-delay:-7s"></i><i style="left:31%;top:40%;animation-delay:-11s"></i>
+      <i style="left:49%;top:58%;animation-delay:-4s"></i><i style="left:52%;top:36%;animation-delay:-9s"></i><i style="left:47%;top:44%;animation-delay:-13s"></i>
+      <i style="left:65%;top:60%;animation-delay:-1s"></i><i style="left:68%;top:42%;animation-delay:-6s"></i><i style="left:63%;top:34%;animation-delay:-10s"></i>
+    </div>
+    <div class="scrim" aria-hidden="true"></div>
+
+    <div class="band left b1 fx-rise" data-a="0" data-b="0.17">
+      <span class="kicker meta">BMW Ferreira · Jardins</span>
+      <p class="h split">A nova <strong>S 1000 RR</strong> 2026.</p>
+      <p class="sub meta">Uma apresentação particular. Role para acender as luzes.</p>
+    </div>
+    <div class="band right b2" data-a="0.20" data-b="0.38" data-ramp="0.04">
+      <span class="kicker meta">01 · Frente</span>
+      <h2 class="pair"><span class="sr">210 cv. Ainda em silêncio.</span><span class="soft" aria-hidden="true"><strong>210 cv.</strong> Ainda em silêncio.</span><span class="sharp" aria-hidden="true"><strong>210 cv.</strong> Ainda em silêncio.</span></h2>
+      <p class="sub meta">Quatro cilindros, 999 cm³, 13.750 rpm.</p>
+    </div>
+    <div class="band left b3 fx-snap" data-a="0.42" data-b="0.60" data-spread="0.5">
+      <span class="kicker meta">02 · Aerodinâmica</span>
+      <h2 class="split">Asas que seguram a moto no chão.</h2>
+      <p class="sub meta">Até 37% mais pressão aerodinâmica que a geração anterior.</p>
+    </div>
+    <div class="band left b4 fx-scatter" data-a="0.64" data-b="0.80">
+      <span class="kicker meta">03 · Traseira</span>
+      <h2 class="split">Akrapovič de série.</h2>
+      <p class="sub meta">E feita no Brasil, em Manaus. A BMW mais potente montada aqui.</p>
+    </div>
+    <div class="band center b5 fx-rise" data-a="0.84" data-b="1">
+      <div class="top"><h2 class="split">Agora ela é toda sua.<br>Por uma tarde.</h2>
+      <p class="sub">Visitas privadas no showroom dos Jardins, com hora marcada.</p></div>
+      <div class="cta"><a class="btn btn-primary" href="#agendar">Agendar visita privada</a><a class="btn btn-ghost" href="#versoes">Ver as versões</a></div>
+    </div>
+
+    <div class="cue" id="cue" aria-hidden="true">Role<span></span></div>
+    <div class="hud" id="hud" aria-hidden="true">Luzes 0/3</div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+  <section class="sec" id="maquina" aria-labelledby="t-maquina">
+    <svg class="racing" viewBox="0 0 1600 160" preserveAspectRatio="none" aria-hidden="true"><path data-draw pathLength="1" d="M-20 120C180 120 260 30 420 34S640 130 820 110 1040 20 1200 40 1460 120 1620 90"/></svg>
+    <div class="sec-head rv">
+      <span class="kicker" style="--i:0">A máquina</span>
+      <h2 id="t-maquina" style="--i:1">Os números, sem enfeite.</h2>
+    </div>
+    <div class="wrap">
+      <div class="specs rv">
+        <div class="spec" style="--i:0"><div class="num"><span data-count="210">210</span><small>cv</small></div><p>a 13.750 rpm. A BMW mais potente feita no Brasil.</p></div>
+        <div class="spec" style="--i:1"><div class="num"><span data-count="999">999</span><small>cm³</small></div><p>Quatro cilindros em linha, câmbio de seis marchas.</p></div>
+        <div class="spec" style="--i:2"><div class="num"><span data-count="13750">13.750</span><small>rpm</small></div><p>Onde a potência máxima aparece.</p></div>
+        <div class="spec" style="--i:3"><div class="num"><span data-count="7">7</span><small>modos</small></div><p>Da chuva ao autódromo.</p></div>
+      </div>
+      <p class="spec-note rv"><span style="--i:0;display:block">Rain, Road, Dynamic, Race e três modos Race Pro. Kit Chassi M e escapamento Akrapovič em todas as versões.</span></p>
+    </div>
+  </section>
+
+  <section class="sec" id="versoes" aria-labelledby="t-versoes">
+    <div class="wrap versions">
+      <div class="showcase rv" aria-hidden="true">
+        <svg viewBox="60 100 880 470" style="--i:0"><use id="vbike" href="#bikeArt"/></svg>
+      </div>
+      <div>
+        <div class="rv">
+          <span class="kicker" style="--i:0">Quatro versões</span>
+          <h2 id="t-versoes" style="--i:1;font-size:clamp(30px,3.4vw,48px);margin-top:16px">Escolha a sua. A gente acende as luzes.</h2>
+        </div>
+        <ul class="vlist rv" style="margin-top:36px">
+          <li style="--i:0"><button class="vbtn" type="button" aria-pressed="true" data-paint="#16191E"><span class="sw" style="background:#16191E"></span><span class="vname">Preta<em>A mais discreta.</em></span><span class="vprice">R$ 139.900</span></button></li>
+          <li style="--i:1"><button class="vbtn" type="button" aria-pressed="false" data-paint="#5E7487"><span class="sw" style="background:#5E7487"></span><span class="vname">Cinza Bluestone<em>O cinza azulado da linha 2026.</em></span><span class="vprice">R$ 141.900</span></button></li>
+          <li style="--i:2"><button class="vbtn" type="button" aria-pressed="false" data-paint="#C9CED4"><span class="sw" style="background:#C9CED4"></span><span class="vname">M Package<em>O pacote M de fábrica.</em></span><span class="vprice">R$ 158.900</span></button></li>
+          <li style="--i:3"><button class="vbtn" type="button" aria-pressed="false" data-paint="#26292E"><span class="sw" style="background:repeating-linear-gradient(45deg,#2A2D32 0 3px,#1C1E22 3px 6px)"></span><span class="vname">M Carbon<em>O topo da linha, com fibra de carbono.</em></span><span class="vprice">R$ 178.900</span></button></li>
+        </ul>
+        <p class="vnote">Preços sugeridos de lançamento. O valor final é confirmado na visita. Cores ilustrativas.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="cuidado" aria-labelledby="t-cuidado">
+    <div class="sec-head rv">
+      <span class="kicker" style="--i:0">Sem surpresas</span>
+      <h2 id="t-cuidado" style="--i:1">As perguntas que todo mundo faz. Respondidas antes.</h2>
+    </div>
+    <div class="wrap qa rv">
+      <article style="--i:0"><h3><span>Manutenção</span>"A manutenção não é cara demais?"</h3><p>Você recebe o plano de revisões com valor fechado antes de assinar qualquer coisa.</p></article>
+      <article style="--i:1"><h3><span>Seguro</span>"E o seguro?"</h3><p>Fazemos a cotação com você, na visita, com mais de uma seguradora.</p></article>
+      <article style="--i:2"><h3><span>Uso diário</span>"Dá para usar todo dia?"</h3><p>Ela é uma moto de pista. Banco firme, garupa quase simbólica. Falamos isso antes do test ride, não depois.</p></article>
+      <article style="--i:3"><h3><span>Revenda</span>"Ela vai desvalorizar?"</h3><p>Revisões feitas na rede autorizada ficam no histórico da moto. Isso conta na hora de vender.</p></article>
+    </div>
+  </section>
+
+  <section class="sec" id="visita" aria-labelledby="t-visita">
+    <div class="sec-head rv">
+      <span class="kicker" style="--i:0">Como é a visita</span>
+      <h2 id="t-visita" style="--i:1">Três passos. Nenhuma pressa.</h2>
+    </div>
+    <div class="wrap steps rv">
+      <svg class="trail" viewBox="0 0 1200 20" preserveAspectRatio="none" aria-hidden="true"><path data-draw pathLength="1" d="M58 10C300 2 500 18 700 10S1000 4 1200 10"/></svg>
+      <div class="step" style="--i:0">
+        <div class="ico"><svg viewBox="0 0 56 56" aria-hidden="true"><circle cx="28" cy="28" r="20"/><path d="M28 16v12l8 5"/></svg></div>
+        <span class="n">01</span><h3>Você escolhe o horário.</h3><p>O showroom fica aberto só para você.</p>
+      </div>
+      <div class="step" style="--i:1">
+        <div class="ico"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M22 6h12l10 40H12z"/><path d="M10 48h36"/></svg></div>
+        <span class="n">02</span><h3>Você conhece a moto com calma.</h3><p>Café, um especialista e tempo para olhar cada detalhe.</p>
+      </div>
+      <div class="step" style="--i:2">
+        <div class="ico"><svg viewBox="0 0 56 56" aria-hidden="true"><path d="M8 46C20 40 18 28 28 24s20-6 20-16"/><path d="M14 50c10-4 12-14 20-18s16-8 18-16" opacity=".5"/></svg></div>
+        <span class="n">03</span><h3>Você pilota.</h3><p>Test ride acompanhado, no seu ritmo, com equipamento à disposição.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="partida" aria-labelledby="t-partida">
+    <div class="ign" id="ign">
+      <div class="tach" aria-hidden="true">
+        <svg viewBox="0 0 400 400">
+          <path class="track" d="M93.93 306.07A150 150 0 1 1 306.07 306.07"/>
+          <path class="red" d="M349.06 216.8A150 150 0 0 1 306.07 306.07"/>
+          <path class="fill" id="tfill" pathLength="1" d="M93.93 306.07A150 150 0 1 1 306.07 306.07"/>
+          <g class="ticks" id="ticks"></g>
+          <g class="needle" id="needle" style="transform:rotate(-135deg)"><line x1="200" y1="200" x2="200" y2="78"/></g>
+          <circle class="hubc" cx="200" cy="200" r="12"/>
+        </svg>
+        <div class="readout"><b id="rpm">0</b><span>RPM</span></div>
+      </div>
+      <div class="ign-copy">
+        <span class="kicker">Partida</span>
+        <h2 id="t-partida" style="margin-top:16px">Segure. Sinta o motor subir.</h2>
+        <p>Mantenha o botão pressionado até o ponteiro chegar ao fim. Se soltar antes, ele volta devagar.</p>
+        <button class="btn btn-primary hold" id="hold" type="button" aria-describedby="hold-help"><span id="hold-label">Segure para dar a partida</span></button>
+        <p class="sr" id="hold-help">Mantenha pressionado com o mouse, o dedo, a barra de espaço ou Enter.</p>
+        <p class="kicker" style="margin-top:36px">Sua visita inclui</p>
+        <ul class="inc" style="margin-top:16px">
+          <li>Showroom fechado só para você</li>
+          <li>Test ride acompanhado</li>
+          <li>Cotação de seguro e simulação de financiamento na hora</li>
+          <li>Plano de revisões por escrito</li>
+        </ul>
+        <div class="after" id="after"><a class="btn btn-ghost" href="#agendar">Escolher meu horário</a></div>
+        <p class="sr" aria-live="polite" id="ign-live"></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="perguntas" aria-labelledby="t-faq">
+    <div class="sec-head rv" style="max-width:900px">
+      <span class="kicker" style="--i:0">Perguntas</span>
+      <h2 id="t-faq" style="--i:1">O que você quer saber antes de vir.</h2>
+    </div>
+    <div class="faq">
+      <details><summary>É moto para quem está começando?<i aria-hidden="true"></i></summary><p class="ans">Não. São 210 cv. Recomendamos experiência com motos grandes. Na visita, a gente conversa com honestidade sobre o seu histórico.</p></details>
+      <details><summary>Quanto custa manter por ano?<i aria-hidden="true"></i></summary><p class="ans">Depende de quanto você roda. Na visita você leva o plano de revisões e a cotação de seguro por escrito, com os valores para o seu uso.</p></details>
+      <details><summary>Tem financiamento?<i aria-hidden="true"></i></summary><p class="ans">Sim. Simulamos na visita, com a entrada e as parcelas que fazem sentido para você.</p></details>
+      <details><summary>Posso levar para a pista?<i aria-hidden="true"></i></summary><p class="ans">Ela foi feita para isso. Os modos Race Pro ajustam a eletrônica para o autódromo.</p></details>
+      <details><summary>Os preços do site são finais?<i aria-hidden="true"></i></summary><p class="ans">São os preços sugeridos de lançamento. O valor final é confirmado na visita.</p></details>
+    </div>
+  </section>
+
+  <section class="sec" id="agendar" aria-labelledby="t-agendar">
+    <div class="book">
+      <div class="book-copy rv">
+        <span class="kicker" style="--i:0">Visita privada</span>
+        <h2 id="t-agendar" style="--i:1;margin-top:16px">As luzes acendem quando você chega.</h2>
+        <p style="--i:2">Deixe seu nome e seu WhatsApp. A gente confirma o horário e prepara a versão que você escolher.</p>
+        <p class="addr" style="--i:3">BMW Ferreira<br>Jardins · São Paulo<br>Visitas com hora marcada</p>
+      </div>
+      <form id="form" novalidate>
+        <div><label for="f-nome">Nome</label><input id="f-nome" name="nome" autocomplete="name" placeholder="Como podemos chamar você?" required></div>
+        <div><label for="f-zap">WhatsApp</label><input id="f-zap" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(11) 90000-0000" required></div>
+        <div><label for="f-versao">Versão de interesse</label>
+          <select id="f-versao" name="versao"><option>Preta</option><option>Cinza Bluestone</option><option>M Package</option><option>M Carbon</option><option>Ainda não sei</option></select></div>
+        <fieldset><legend class="lg">Melhor período</legend>
+          <div class="chips">
+            <label><input type="radio" name="periodo" value="manha"><span>Manhã</span></label>
+            <label><input type="radio" name="periodo" value="tarde" checked><span>Tarde</span></label>
+            <label><input type="radio" name="periodo" value="sabado"><span>Sábado</span></label>
+          </div>
+        </fieldset>
+        <p class="fine" id="f-err" role="alert" style="display:none">Preencha seu nome e seu WhatsApp para continuar.</p>
+        <button class="btn btn-primary" type="submit">Pedir minha visita</button>
+        <p class="fine">Projeto de demonstração: nenhum dado é enviado.</p>
+        <div class="ok" role="status" aria-live="polite">
+          <span class="kicker">Pedido recebido</span>
+          <h3 id="ok-title">Obrigado. Sua tarde está quase marcada.</h3>
+          <p>Num site real, a equipe chamaria você no WhatsApp em até um dia útil. Este é um projeto de demonstração, então nada foi enviado.</p>
+        </div>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="foot">
+    <a class="brand" href="#top" aria-label="BMW Ferreira, voltar ao início">
+      <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M20 52 32 10 44 52" fill="none" stroke="#8FB0CC" stroke-width="1.6" opacity=".6"/><path d="M25 20h15M25 20v26M25 32h11" fill="none" stroke="#ECE9E3" stroke-width="3.4" stroke-linecap="round"/></svg>
+      <span><b>FERREIRA</b><small>Jardins · São Paulo</small></span>
+    </a>
+    <div>
+      <p><strong style="color:var(--text-primary);font-weight:500">Projeto conceitual de demonstração.</strong> A BMW Ferreira é uma concessionária fictícia. Este site não é um anúncio oficial da BMW, da BMW Motorrad nem de qualquer revenda autorizada.</p>
+      <p>BMW e S 1000 RR são marcas da BMW AG. Especificações e preços sugeridos vêm de fontes públicas do lançamento da linha 2026 no Brasil e podem mudar. A ilustração da moto foi desenhada para este projeto.</p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(() => {
+  'use strict';
+  document.documentElement.classList.remove('nojs');
+  const $ = (s, r = document) => r.querySelector(s);
+  const $$ = (s, r = document) => [...r.querySelectorAll(s)];
+  const clamp = (v, lo, hi) => Math.min(hi, Math.max(lo, v));
+  const smoothstep = (p, e0, e1) => { const t = clamp((p - e0) / (e1 - e0), 0, 1); return t * t * (3 - 2 * t); };
+  function rng(seed) { let s = seed >>> 0; return () => (s = (s * 1664525 + 1013904223) >>> 0) / 4294967296; }
+
+  const RM = matchMedia('(prefers-reduced-motion: reduce)');
+  const PORTRAIT = matchMedia('(orientation: portrait) and (max-width: 1024px)');
+
+  /* ---------- divisao do texto (uma vez) ---------- */
+  $$('.split').forEach((el, n) => {
+    const band = el.closest('.band');
+    const fx = band.classList.contains('fx-snap') ? 'snap' : band.classList.contains('fx-scatter') ? 'scatter' : 'rise';
+    const spread = parseFloat(band.dataset.spread || '0.5');
+    const r = rng(1000 + n * 77);
+    const full = el.textContent.replace(/\s+/g, ' ').trim();
+    const nodes = [...el.childNodes];
+    const words = [];
+    nodes.forEach(node => {
+      if (node.nodeName === 'BR') { words.push({ br: true }); return; }
+      const strong = node.nodeType === 1;
+      node.textContent.split(/(\s+)/).forEach(t => { if (t.trim()) words.push({ t, strong }); });
+    });
+    const total = words.reduce((a, w) => a + (w.br ? 0 : w.t.length), 0);
+    el.textContent = '';
+    const sr = document.createElement('span'); sr.className = 'sr'; sr.textContent = full;
+    const vis = document.createElement('span'); vis.setAttribute('aria-hidden', 'true');
+    let ci = 0;
+    words.forEach((w, wi) => {
+      if (w.br) { vis.appendChild(document.createElement('br')); return; }
+      const ws = document.createElement(w.strong ? 'strong' : 'span');
+      ws.className = 'w';
+      ws.style.setProperty('--th', (wi / words.length * 0.5).toFixed(3));
+      if (fx !== 'rise') {
+        [...w.t].forEach(ch => {
+          const c = document.createElement('span'); c.className = 'c'; c.textContent = ch;
+          if (fx === 'snap') {
+            c.style.setProperty('--th', (ci / total * spread + r() * 0.06).toFixed(3));
+            c.style.setProperty('--jx', (40 + r() * 60).toFixed(1) + 'px');
+          } else {
+            c.style.setProperty('--th', (r() * 0.55).toFixed(3));
+            c.style.setProperty('--jx', ((r() - 0.5) * 70).toFixed(1) + 'px');
+            c.style.setProperty('--jy', ((r() - 0.3) * -60).toFixed(1) + 'px');
+            c.style.setProperty('--jr', ((r() - 0.5) * 40).toFixed(1) + 'deg');
+          }
+          ws.appendChild(c); ci++;
+        });
+      } else ws.textContent = w.t;
+      vis.appendChild(ws);
+      if (wi < words.length - 1 && !words[wi + 1].br) vis.appendChild(document.createTextNode(' '));
+    });
+    el.append(sr, vis);
+  });
+
+  /* ---------- o showroom ---------- */
+  const hero = $('#top');
+  const room = $('#room');
+  const bands = $$('.band').map((el, i) => ({
+    el, i, a: parseFloat(el.dataset.a), b: parseFloat(el.dataset.b),
+    ramp: el.dataset.ramp ? parseFloat(el.dataset.ramp) : 0, op: -1, k: -1, on: null
+  }));
+  const last = bands.length - 1;
+  const S = ['s1', 's2', 's3'].map(id => $('#' + id));
+  const B = ['b1', 'b2', 'b3'].map(id => $('#' + id));
+  const P = ['p1', 'p2', 'p3'].map(id => $('#' + id));
+  const amb = $('#amb'), drl = $('#drl'), cam = $('#cam'), dust = $('#dust'), cue = $('#cue'), hud = $('#hud');
+  const LIGHTS = [[0.15, 0.24], [0.37, 0.46], [0.59, 0.68]];
+  const cache = new Map();
+  function setOp(el, v) { const o = cache.get(el); if (o === undefined || Math.abs(o - v) > 0.003) { cache.set(el, v); el.style.opacity = v.toFixed(3); } }
+
+  let lastScale = -1, lastHud = '', lastHudAt = 0, dustLive = null;
+  function updateScene(p) {
+    let maxL = 0, count = 0;
+    LIGHTS.forEach(([e0, e1], i) => {
+      const l = smoothstep(p, e0, e1); maxL = Math.max(maxL, l); if (l > 0.5) count++;
+      setOp(S[i], l); setOp(B[i], l * (1 - 0.55 * smoothstep(p, 0.8, 0.92))); setOp(P[i], l);
+    });
+    const a = smoothstep(p, 0.79, 0.9);
+    setOp(amb, a * 0.62);
+    setOp(drl, smoothstep(p, 0.84, 0.92));
+    setOp(dust, maxL * 0.9);
+    setOp(cue, 1 - smoothstep(p, 0.02, 0.07));
+    const s = 1 + 0.05 * p;
+    if (Math.abs(s - lastScale) > 0.0004) {
+      lastScale = s;
+      cam.setAttribute('transform', `translate(800 520) scale(${s.toFixed(4)}) translate(-800 -520)`);
+    }
+    const live = maxL > 0.02;
+    if (live !== dustLive) { dustLive = live; dust.classList.toggle('live', live); }
+    const now = performance.now();
+    const label = a > 0.5 ? 'Showroom aceso' : 'Luzes ' + count + '/3';
+    if (label !== lastHud && now - lastHudAt > 100) { lastHud = label; lastHudAt = now; hud.textContent = label; }
+  }
+
+  let loadK = 0;
+  function updateCaptions(p) {
+    bands.forEach(bd => {
+      const { a, b } = bd;
+      const f = Math.min(0.02, (b - a) / 3);
+      let op = (bd.i === 0 ? 1 : smoothstep(p, a, a + f)) * (bd.i === last ? 1 : 1 - smoothstep(p, b - f, b));
+      let k = clamp((p - a) / (bd.ramp || Math.min(0.025, (b - a) * 0.35)), 0, 1);
+      if (bd.i === 0) k = Math.max(k, loadK);
+      if (bd.i === last && p < a) op = 0;
+      if (Math.abs(op - bd.op) > 0.004 || (op === 0) !== (bd.op === 0) || (op === 1) !== (bd.op === 1)) { bd.op = op; bd.el.style.opacity = op.toFixed(3); }
+      if (Math.abs(k - bd.k) > 0.008 || (k === 1 && bd.k !== 1) || (k === 0 && bd.k !== 0)) { bd.k = k; bd.el.style.setProperty('--k', k.toFixed(3)); }
+      const on = op > 0.5;
+      if (on !== bd.on) { bd.on = on; bd.el.classList.toggle('on', on); bd.el.inert = !on; }
+    });
+  }
+
+  function heroProgress() {
+    const range = hero.offsetHeight - innerHeight;
+    if (range <= 0) return 1;
+    return clamp(-hero.getBoundingClientRect().top / range, 0, 1);
+  }
+
+  let target = 0, shown = 0, rafId = null, lastTick = 0, heroOnScreen = true, scrubOn = false;
+  function tick(now) {
+    const dt = Math.min(100, now - (lastTick || now));
+    lastTick = now;
+    const k = 0.14;
+    shown += (target - shown) * (1 - Math.pow(1 - k, dt / 16.667));
+    if (Math.abs(target - shown) < 0.0005) { shown = target; rafId = null; lastTick = 0; }
+    else rafId = requestAnimationFrame(tick);
+    updateScene(shown); updateCaptions(shown);
+  }
+  function onHeroScroll() {
+    target = heroProgress();
+    if (rafId === null && heroOnScreen) rafId = requestAnimationFrame(tick);
+  }
+  new IntersectionObserver(es => { heroOnScreen = es[0].isIntersecting; if (heroOnScreen && scrubOn) onHeroScroll(); }).observe(hero);
+
+  function runLoadRamp() {
+    const t0 = performance.now();
+    const step = now => {
+      const t = clamp((now - t0) / 1400, 0, 1);
+      loadK = 1 - Math.pow(1 - t, 3);
+      if (scrubOn) updateCaptions(shown);
+      if (t < 1) requestAnimationFrame(step);
+    };
+    requestAnimationFrame(step);
+  }
+
+  function applyViewBox() { room.setAttribute('viewBox', PORTRAIT.matches ? '370 130 860 700' : '0 0 1600 900'); room.setAttribute('preserveAspectRatio', PORTRAIT.matches ? 'xMidYMid meet' : 'xMidYMid slice'); }
+  PORTRAIT.addEventListener('change', applyViewBox);
+  applyViewBox();
+
+  /* ---------- linhas que se desenham, nav ---------- */
+  const draws = $$('[data-draw]').map(el => ({ el, sec: el.closest('section'), v: -1 }));
+  const nav = $('.nav');
+  let navSolid = null, lowerQueued = false, pinned = false;
+  function updateLower() {
+    lowerQueued = false;
+    const solid = scrollY > hero.offsetHeight - innerHeight * 1.05;
+    if (solid !== navSolid) { navSolid = solid; nav.classList.toggle('solid', solid); }
+    if (pinned) return;
+    draws.forEach(d => {
+      const r = d.sec.getBoundingClientRect();
+      if (r.bottom < 0 || r.top > innerHeight) return;
+      const v = clamp((innerHeight - r.top) / (innerHeight * 0.9), 0, 1);
+      if (Math.abs(v - d.v) > 0.004) { d.v = v; d.el.style.strokeDashoffset = (1 - v).toFixed(3); }
+    });
+  }
+  function onScroll() {
+    if (scrubOn) onHeroScroll();
+    if (!lowerQueued) { lowerQueued = true; requestAnimationFrame(updateLower); }
+  }
+  addEventListener('scroll', onScroll, { passive: true });
+  addEventListener('resize', onScroll, { passive: true });
+
+  /* ---------- entradas e elementos vivos ---------- */
+  const revIO = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return;
+    const el = e.target; el.classList.add('in'); revIO.unobserve(el);
+    setTimeout(() => el.classList.add('settled'), 1600);
+  }), { threshold: 0.15 });
+  $$('.rv').forEach(el => { [...el.children].forEach((c, i) => { if (!c.style.getPropertyValue('--i')) c.style.setProperty('--i', i); }); revIO.observe(el); });
+  const liveIO = new IntersectionObserver(es => es.forEach(e => e.target.classList.toggle('live', e.isIntersecting)));
+  $$('.sec').forEach(s => liveIO.observe(s));
+  document.addEventListener('visibilitychange', () => document.body.classList.toggle('paused', document.hidden));
+
+  /* contadores */
+  const fmt = n => n.toLocaleString('pt-BR');
+  const counters = $$('[data-count]');
+  function countUp(el) {
+    const to = +el.dataset.count, t0 = performance.now();
+    const step = now => {
+      const t = clamp((now - t0) / 1500, 0, 1), e = 1 - Math.pow(1 - t, 4);
+      const txt = fmt(Math.round(to * e));
+      if (el.textContent !== txt) el.textContent = txt;
+      if (t < 1 && !pinned) requestAnimationFrame(step); else el.textContent = fmt(to);
+    };
+    requestAnimationFrame(step);
+  }
+  const cIO = new IntersectionObserver(es => es.forEach(e => {
+    if (!e.isIntersecting) return; cIO.unobserve(e.target);
+    if (!pinned) countUp(e.target);
+  }), { threshold: 0.6 });
+  counters.forEach(el => { el.textContent = '0'; cIO.observe(el); });
+
+  /* versoes: a moto da cena final muda de cor */
+  const vbike = $('#vbike');
+  $$('.vbtn').forEach(btn => btn.addEventListener('click', () => {
+    $$('.vbtn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    vbike.style.setProperty('--paint', btn.dataset.paint);
+  }));
+  vbike.style.setProperty('--paint', '#16191E');
+
+  /* ---------- partida: segurar para acelerar ---------- */
+  const ign = $('#ign'), holdBtn = $('#hold'), tfill = $('#tfill'), needle = $('#needle'), rpmEl = $('#rpm'), holdLabel = $('#hold-label'), live = $('#ign-live');
+  (function ticks() {
+    const g = $('#ticks'); let html = '';
+    for (let i = 0; i <= 14; i++) {
+      const ang = (-225 + i * (270 / 14)) * Math.PI / 180;
+      const r1 = i % 2 ? 136 : 128, r2 = 142;
+      html += `<line x1="${(200 + r1 * Math.cos(ang)).toFixed(1)}" y1="${(200 + r1 * Math.sin(ang)).toFixed(1)}" x2="${(200 + r2 * Math.cos(ang)).toFixed(1)}" y2="${(200 + r2 * Math.sin(ang)).toFixed(1)}"/>`;
+      if (i % 2 === 0) html += `<text class="lbl" text-anchor="middle" dominant-baseline="middle" x="${(200 + 110 * Math.cos(ang)).toFixed(1)}" y="${(200 + 110 * Math.sin(ang)).toFixed(1)}">${i}</text>`;
+    }
+    g.innerHTML = html;
+  })();
+  let hv = 0, holding = false, done = false, hRaf = null, hLast = 0, lastRpm = '', lastRpmAt = 0, pinnedHold = false;
+  function drawHold(v, now) {
+    tfill.style.strokeDashoffset = (1 - v).toFixed(4);
+    needle.style.transform = `rotate(${(-135 + 270 * v).toFixed(2)}deg)`;
+    holdBtn.style.setProperty('--hp', v.toFixed(3));
+    const txt = fmt(Math.round(v * 140) * 100);
+    if (txt !== lastRpm && (now - lastRpmAt > 100 || v === 0 || v === 1)) { lastRpm = txt; lastRpmAt = now; rpmEl.textContent = txt; }
+  }
+  function holdTick(now) {
+    const dt = Math.min(100, now - (hLast || now)) / 1000; hLast = now;
+    if (holding) hv = Math.min(1, hv + dt / 1.8 * (1 + hv * 0.6));
+    else hv += (0 - hv) * (1 - Math.pow(0.04, dt));
+    if (!holding && hv < 0.001) hv = 0;
+    drawHold(hv, now);
+    if (hv >= 1 && !done) { finishHold(); hRaf = null; hLast = 0; return; }
+    if (holding || hv > 0) hRaf = requestAnimationFrame(holdTick); else { hRaf = null; hLast = 0; }
+  }
+  function finishHold() {
+    done = true; holding = false; hv = 1; drawHold(1, performance.now());
+    ign.classList.add('done'); holdLabel.textContent = 'Motor ligado';
+    live.textContent = 'Motor ligado. Sua visita inclui showroom fechado, test ride, cotação de seguro e plano de revisões.';
+  }
+  function startHold(e) {
+    if (done) return; if (e && e.cancelable) e.preventDefault();
+    holding = true; if (hRaf === null) hRaf = requestAnimationFrame(holdTick);
+  }
+  function endHold() { if (!holding) return; holding = false; if (hRaf === null && !done) hRaf = requestAnimationFrame(holdTick); }
+  holdBtn.addEventListener('pointerdown', e => { holdBtn.setPointerCapture && holdBtn.setPointerCapture(e.pointerId); startHold(e); });
+  ['pointerup', 'pointercancel', 'lostpointercapture'].forEach(t => holdBtn.addEventListener(t, endHold));
+  holdBtn.addEventListener('keydown', e => { if ((e.key === ' ' || e.key === 'Enter') && !e.repeat) startHold(e); });
+  holdBtn.addEventListener('keyup', e => { if (e.key === ' ' || e.key === 'Enter') endHold(); });
+  holdBtn.addEventListener('blur', endHold);
+  holdBtn.addEventListener('contextmenu', e => e.preventDefault());
+
+  /* ---------- formulario (demonstracao: nada e enviado) ---------- */
+  const form = $('#form'), err = $('#f-err');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    const nome = $('#f-nome'), zap = $('#f-zap');
+    const ok = nome.value.trim().length > 1 && zap.value.replace(/\D/g, '').length >= 10;
+    nome.setAttribute('aria-invalid', String(nome.value.trim().length < 2));
+    zap.setAttribute('aria-invalid', String(zap.value.replace(/\D/g, '').length < 10));
+    if (!ok) { err.style.display = 'block'; (nome.value.trim().length < 2 ? nome : zap).focus(); return; }
+    form.classList.add('sent');
+    const first = nome.value.trim().split(' ')[0];
+    $('#ok-title').textContent = `Obrigado, ${first}. Sua tarde está quase marcada.`;
+  });
+
+  /* ---------- modo: animado ou estados finais (movimento reduzido ao vivo) ---------- */
+  function pinToFinalStates() {
+    pinned = true;
+    draws.forEach(d => { d.v = 1; d.el.style.strokeDashoffset = '0'; });
+    counters.forEach(el => { el.textContent = fmt(+el.dataset.count); });
+    if (!done) { pinnedHold = true; finishHold(); }
+  }
+  function unpinFinalStates() {
+    pinned = false;
+    draws.forEach(d => { d.v = -1; d.el.style.strokeDashoffset = ''; });
+    if (pinnedHold) {
+      pinnedHold = false; done = false; hv = 0; drawHold(0, performance.now());
+      ign.classList.remove('done'); holdLabel.textContent = 'Segure para dar a partida'; live.textContent = '';
+    }
+    updateLower();
+  }
+  function enableScrub() {
+    if (scrubOn) return; scrubOn = true;
+    bands.forEach(b => { b.op = -1; b.k = -1; b.on = null; b.el.style.opacity = ''; });
+    cache.clear(); lastScale = -1;
+    shown = target = heroProgress();
+    updateScene(shown); updateCaptions(shown);
+    onHeroScroll();
+  }
+  function disableScrub() {
+    scrubOn = false;
+    if (rafId !== null) { cancelAnimationFrame(rafId); rafId = null; lastTick = 0; }
+    updateScene(1);
+    bands.forEach(b => { b.el.style.opacity = ''; b.el.inert = b.i !== last; });
+  }
+  function applyMode() {
+    if (RM.matches) { disableScrub(); pinToFinalStates(); }
+    else { if (pinned) unpinFinalStates(); enableScrub(); }
+  }
+  RM.addEventListener('change', applyMode);
+  applyMode();
+  runLoadRamp();
+  updateLower();
+})();
+</script>
+</body>
+</html>
