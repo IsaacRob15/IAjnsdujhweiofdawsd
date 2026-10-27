@@ -79,7 +79,7 @@ p{margin:0}
 .hero{position:relative;height:600vh}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0E1116}
 .room{position:absolute;inset:0;width:100%;height:100%}
-.spot,.beam,.pool,#amb,#drl{opacity:0}
+.spot,.beam,.pool,#amb{opacity:0}
 .dust{position:absolute;inset:0;pointer-events:none;opacity:0}
 .dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:#dfe7ef;opacity:.0;animation:mote 14s linear infinite}
 .dust i:nth-child(odd){width:2px;height:2px}
@@ -163,12 +163,13 @@ main{position:relative}
 
 /* Versoes */
 .versions{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(32px,5vw,80px);align-items:center}
-.showcase{position:relative;aspect-ratio:16/10;border-radius:20px;background:radial-gradient(ellipse 70% 60% at 50% 38%,#232A33,#12161C 72%);border:1px solid var(--line);overflow:hidden}
-.showcase::before{content:"";position:absolute;left:50%;top:-10%;width:60%;height:110%;transform:translateX(-50%);background:linear-gradient(rgba(236,240,245,.10),rgba(236,240,245,0) 80%);clip-path:polygon(44% 0,56% 0,100% 100%,0 100%);opacity:.8}
-.live .showcase::before{animation:breathe 6s var(--ease-io) -2s infinite alternate}
-@keyframes breathe{from{opacity:.55}to{opacity:.95}}
-.showcase svg{position:absolute;inset:6% 4% 4%;width:92%;height:90%}
-.showcase .paint{transition:fill .8s var(--ease-out)}
+.showcase{position:relative;aspect-ratio:4/3;border-radius:20px;background:radial-gradient(ellipse 70% 60% at 50% 38%,#232A33,#12161C 72%);border:1px solid var(--line);overflow:hidden}
+.slide{position:absolute;inset:0;margin:0;opacity:0;transition:opacity .8s var(--ease-out);pointer-events:none}
+.slide.on{opacity:1}
+.showcase.rv>.slide{opacity:0;transform:none}
+.showcase.rv>.slide.on{opacity:1}
+.slide i{position:absolute;inset:-8%;background-size:cover;background-position:center;filter:blur(28px) brightness(.55) saturate(1.1)}
+.slide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .vlist{list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
 .vlist li{border-bottom:1px solid var(--line)}
 .vbtn{all:unset;box-sizing:border-box;cursor:pointer;width:100%;display:grid;grid-template-columns:28px 1fr auto;align-items:baseline;gap:18px;padding:22px 8px;transition:background .4s var(--ease-out)}
@@ -366,91 +367,12 @@ html.nojs .band.b5{opacity:1;--k:1}
           <rect x="0" y="730" width="1600" height="170" fill="url(#gFade)"/>
         </mask>
 
-        <!-- a moto, perfil lateral, coordenadas locais 0..1000 x 0..560, chao em y=548 -->
-        <g id="bikeArt">
-          <!-- roda traseira -->
-          <circle cx="790" cy="430" r="118" fill="#090B0E"/>
-          <circle cx="790" cy="430" r="114" fill="none" stroke="#262C34" stroke-width="2"/>
-          <circle cx="790" cy="430" r="90" fill="#13171C" stroke="#4E5763" stroke-width="2"/>
-          <g transform="translate(790 430)" fill="#59626E">
-            <path d="M-6-18-3-86 3-86 6-18Z"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(72)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(144)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(216)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(288)"/>
-          </g>
-          <circle cx="790" cy="430" r="48" fill="none" stroke="#7A848F" stroke-width="5"/>
-          <circle cx="790" cy="430" r="16" fill="#69727D"/>
-          <rect x="778" y="470" width="30" height="14" rx="5" fill="#8A939E"/>
-          <!-- corrente -->
-          <path d="M598 334 790 392M598 366 790 470" stroke="#2C323A" stroke-width="3" fill="none"/>
-          <circle cx="790" cy="430" r="40" fill="none" stroke="#2C323A" stroke-width="3"/>
-          <!-- balanca -->
-          <path d="M596 310 642 316 808 416 802 446 782 448 598 352Z" fill="url(#gMetal)"/>
-          <path d="M616 352C690 402 740 430 792 442" stroke="#7A848F" stroke-width="3" fill="none"/>
-          <!-- roda dianteira -->
-          <circle cx="205" cy="430" r="118" fill="#090B0E"/>
-          <circle cx="205" cy="430" r="114" fill="none" stroke="#262C34" stroke-width="2"/>
-          <circle cx="205" cy="430" r="90" fill="#13171C" stroke="#4E5763" stroke-width="2"/>
-          <g transform="translate(205 430)" fill="#59626E">
-            <path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(36)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(108)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(180)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(252)"/><path d="M-6-18-3-86 3-86 6-18Z" transform="rotate(324)"/>
-          </g>
-          <circle cx="205" cy="430" r="70" fill="none" stroke="#7A848F" stroke-width="12" opacity=".9"/>
-          <circle cx="205" cy="430" r="70" fill="none" stroke="#14181D" stroke-width="5" stroke-dasharray="3 11"/>
-          <circle cx="205" cy="430" r="16" fill="#69727D"/>
-          <!-- garfo -->
-          <path d="M196 426 218 436 334 196 314 186Z" fill="url(#gMetal)"/>
-          <path d="M190 420 224 436 272 334 240 318Z" fill="#2B3139"/>
-          <rect x="220" y="366" width="36" height="18" rx="6" transform="rotate(-62 238 375)" fill="#A3ACB6"/>
-          <!-- paralama -->
-          <path d="M140 345C160 300 230 290 272 318L266 330C228 306 172 314 152 352Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
-          <!-- quadro -->
-          <path d="M335 190 478 198 612 302 604 338 585 340 468 232 340 222Z" fill="#2E353E"/><path d="M340 192 478 200 610 304" stroke="#6C7682" stroke-width="1.5" fill="none"/>
-          <!-- motor -->
-          <path d="M440 240 585 262 602 382 560 398 470 398 448 350Z" fill="#191E24"/>
-          <path d="M462 300H575M466 318H580M470 336H584M474 354H588" stroke="#2F3740" stroke-width="2"/>
-          <!-- escapamento -->
-          <path d="M462 398C500 412 560 414 600 404L604 416C560 428 498 426 458 410Z" fill="#3A414B"/>
-          <path d="M596 396 708 360C722 357 731 372 722 384L606 420Z" fill="url(#gMetal)"/>
-          <ellipse cx="718" cy="372" rx="9" ry="11" transform="rotate(-18 718 372)" fill="#08090B" stroke="#9AA3AE" stroke-width="1.5"/>
-          <!-- carenagem inferior -->
-          <path d="M292 316C305 360 334 394 380 404L556 406C566 404 572 396 566 388L470 398 452 352 440 300Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
-          <!-- carenagem lateral -->
-          <path d="M230 238C244 214 274 196 306 184L420 164 452 222C466 260 462 300 446 330L398 366C356 360 318 330 286 300 258 276 236 258 230 238Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
-          <path d="M360 270 420 262 430 300 372 306Z" fill="#0B0E12"/><path d="M252 262C300 300 350 336 400 360" stroke="#0C0F13" stroke-width="3" fill="none" opacity=".8"/>
-          <!-- asas -->
-          <path d="M268 252 338 236 344 246 276 264Z" fill="url(#gMetal)"/>
-          <path d="M282 278 346 264 350 273 290 290Z" fill="url(#gMetal)"/>
-          <!-- bico e farol -->
-          <path d="M222 246C226 232 238 220 256 212L300 194 306 206 262 228C246 236 234 244 228 252Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
-          <path d="M236 240 290 214 294 221 242 248Z" fill="#202831"/>
-          <!-- bolha -->
-          <path d="M296 190 384 118C396 110 410 114 412 126L424 166 306 188Z" fill="url(#gGlass)"/>
-          <!-- retrovisor e semiguidao -->
-          <path d="M330 176 366 166 370 176 334 186Z" fill="#20262D"/>
-          <path d="M402 160 372 170" stroke="#7A848F" stroke-width="4" stroke-linecap="round"/>
-          <!-- tanque -->
-          <path d="M404 154C430 112 520 98 578 124 592 134 598 152 596 172L470 192 420 172Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
-          <!-- banco -->
-          <path d="M586 160C622 170 664 174 704 170L708 182C664 188 620 188 592 186Z" fill="#0E1115" stroke="#2A3038"/>
-          <!-- lateral sob o banco -->
-          <path d="M592 186 704 190C700 215 680 235 650 245L612 300 585 262Z" fill="#1B2027"/>
-          <!-- rabeta -->
-          <path d="M696 168 860 120C869 119 872 127 866 133L836 170C800 196 752 212 708 214L694 190Z" fill="url(#gBody)" class="paint" style="fill:var(--paint,url(#gBody))"/>
-          <path d="M832 158 862 130 864 137 838 164Z" fill="#4A2226"/><path d="M740 184 836 154" stroke="#0C0F13" stroke-width="2"/>
-          <path d="M700 192C720 215 740 230 760 240L640 250 610 230Z" fill="#11151A"/>
-          <!-- pedaleira -->
-          <path d="M618 296 662 300" stroke="#8A939E" stroke-width="4" stroke-linecap="round"/>
-          <circle cx="640" cy="298" r="5" fill="#8A939E"/>
-          <!-- reflexos de luz -->
-          <g fill="none" stroke="#D5DDE6" stroke-width="1.6" stroke-linecap="round" opacity=".55">
-            <path d="M94 390A118 118 0 0 1 288 347"/>
-            <path d="M679 390A118 118 0 0 1 873 347"/>
-            <path d="M414 148C440 116 520 104 572 128"/>
-            <path d="M704 168 858 122"/>
-            <path d="M300 188 384 120"/>
-            <path d="M234 236C248 216 276 198 306 186"/>
-            <path d="M300 206C340 240 390 280 444 320" opacity=".45"/>
-            <path d="M270 252 338 237"/>
-            <path d="M304 360C330 388 356 400 382 404" opacity=".5"/>
-          </g>
-        </g>
+        <radialGradient id="gEdge" cx="50%" cy="50%" r="50%">
+          <stop offset="0" stop-color="#fff"/><stop offset=".62" stop-color="#fff"/><stop offset="1" stop-color="#000"/>
+        </radialGradient>
+        <mask id="photoFade" maskUnits="userSpaceOnUse" x="500" y="150" width="600" height="600">
+          <rect x="500" y="150" width="600" height="600" fill="url(#gEdge)"/>
+        </mask>
       </defs>
 
       <rect width="1600" height="730" fill="url(#gWall)"/>
@@ -468,14 +390,10 @@ html.nojs .band.b5{opacity:1;--k:1}
 
       <g id="cam">
         <g mask="url(#lit)">
-          <g mask="url(#reflFade)" opacity=".16">
-            <use href="#bikeArt" transform="translate(0 1460) scale(1 -1) translate(330 215) scale(.94)"/>
+          <g mask="url(#reflFade)" opacity=".18" transform="translate(0 1462) scale(1 -1)">
+            <image href="assets/moto-preta.jpg" x="500" y="150" width="600" height="600" preserveAspectRatio="xMidYMid slice" mask="url(#photoFade)"/>
           </g>
-          <use href="#bikeArt" transform="translate(330 215) scale(.94)"/>
-        </g>
-        <g id="drl" transform="translate(330 215) scale(.94)">
-          <path d="M236 240 290 214 294 221 242 248Z" fill="#EAF2FF" filter="url(#fGlow)"/>
-          <path d="M238 240 290 215 293 220 242 246Z" fill="#F4F8FF"/>
+          <image href="assets/moto-preta.jpg" x="500" y="150" width="600" height="600" preserveAspectRatio="xMidYMid slice" mask="url(#photoFade)"/>
         </g>
       </g>
     </svg>
@@ -539,8 +457,11 @@ html.nojs .band.b5{opacity:1;--k:1}
 
   <section class="sec" id="versoes" aria-labelledby="t-versoes">
     <div class="wrap versions">
-      <div class="showcase rv" aria-hidden="true">
-        <svg viewBox="60 100 880 470" style="--i:0"><use id="vbike" href="#bikeArt"/></svg>
+      <div class="showcase rv" role="img" aria-label="Foto da versão escolhida da S 1000 RR">
+        <figure class="slide on" data-v="0"><i style="background-image:url(assets/moto-preta.jpg)"></i><img src="assets/moto-preta.jpg" alt="S 1000 RR Preta" width="736" height="882"></figure>
+        <figure class="slide" data-v="1"><i style="background-image:url(assets/moto-bluestone.jpg)"></i><img src="assets/moto-bluestone.jpg" alt="S 1000 RR Cinza Bluestone" width="516" height="387" loading="lazy"></figure>
+        <figure class="slide" data-v="2"><i style="background-image:url(assets/moto-mpackage.jpg)"></i><img src="assets/moto-mpackage.jpg" alt="S 1000 RR M Package" width="516" height="387" loading="lazy"></figure>
+        <figure class="slide" data-v="3"><i style="background-image:url(assets/moto-mcarbon.jpg)"></i><img src="assets/moto-mcarbon.jpg" alt="S 1000 RR M Carbon" width="386" height="518" loading="lazy"></figure>
       </div>
       <div>
         <div class="rv">
@@ -553,7 +474,7 @@ html.nojs .band.b5{opacity:1;--k:1}
           <li style="--i:2"><button class="vbtn" type="button" aria-pressed="false" data-paint="#C9CED4"><span class="sw" style="background:#C9CED4"></span><span class="vname">M Package<em>O pacote M de fábrica.</em></span><span class="vprice">R$ 158.900</span></button></li>
           <li style="--i:3"><button class="vbtn" type="button" aria-pressed="false" data-paint="#26292E"><span class="sw" style="background:repeating-linear-gradient(45deg,#2A2D32 0 3px,#1C1E22 3px 6px)"></span><span class="vname">M Carbon<em>O topo da linha, com fibra de carbono.</em></span><span class="vprice">R$ 178.900</span></button></li>
         </ul>
-        <p class="vnote">Preços sugeridos de lançamento. O valor final é confirmado na visita. Cores ilustrativas.</p>
+        <p class="vnote">Preços sugeridos de lançamento. O valor final é confirmado na visita. Fotos ilustrativas: acabamentos e peças podem diferir da versão de fábrica.</p>
       </div>
     </div>
   </section>
@@ -680,7 +601,7 @@ html.nojs .band.b5{opacity:1;--k:1}
     </a>
     <div>
       <p><strong style="color:var(--text-primary);font-weight:500">Projeto conceitual de demonstração.</strong> A BMW Ferreira é uma concessionária fictícia. Este site não é um anúncio oficial da BMW, da BMW Motorrad nem de qualquer revenda autorizada.</p>
-      <p>BMW e S 1000 RR são marcas da BMW AG. Especificações e preços sugeridos vêm de fontes públicas do lançamento da linha 2026 no Brasil e podem mudar. A ilustração da moto foi desenhada para este projeto.</p>
+      <p>BMW e S 1000 RR são marcas da BMW AG. Especificações e preços sugeridos vêm de fontes públicas do lançamento da linha 2026 no Brasil e podem mudar. As fotos das motos são de referência, enviadas pelo autor do projeto, e mostram logotipos da BMW AG. Algumas têm peças ou pintura que não são de fábrica.</p>
     </div>
   </div>
 </footer>
@@ -754,7 +675,7 @@ html.nojs .band.b5{opacity:1;--k:1}
   const S = ['s1', 's2', 's3'].map(id => $('#' + id));
   const B = ['b1', 'b2', 'b3'].map(id => $('#' + id));
   const P = ['p1', 'p2', 'p3'].map(id => $('#' + id));
-  const amb = $('#amb'), drl = $('#drl'), cam = $('#cam'), dust = $('#dust'), cue = $('#cue'), hud = $('#hud');
+  const amb = $('#amb'), cam = $('#cam'), dust = $('#dust'), cue = $('#cue'), hud = $('#hud');
   const LIGHTS = [[0.15, 0.24], [0.37, 0.46], [0.59, 0.68]];
   const cache = new Map();
   function setOp(el, v) { const o = cache.get(el); if (o === undefined || Math.abs(o - v) > 0.003) { cache.set(el, v); el.style.opacity = v.toFixed(3); } }
@@ -768,7 +689,6 @@ html.nojs .band.b5{opacity:1;--k:1}
     });
     const a = smoothstep(p, 0.79, 0.9);
     setOp(amb, a * 0.62);
-    setOp(drl, smoothstep(p, 0.84, 0.92));
     setOp(dust, maxL * 0.9);
     setOp(cue, 1 - smoothstep(p, 0.02, 0.07));
     const s = 1 + 0.05 * p;
@@ -889,13 +809,12 @@ html.nojs .band.b5{opacity:1;--k:1}
   }), { threshold: 0.6 });
   counters.forEach(el => { el.textContent = '0'; cIO.observe(el); });
 
-  /* versoes: a moto da cena final muda de cor */
-  const vbike = $('#vbike');
-  $$('.vbtn').forEach(btn => btn.addEventListener('click', () => {
+  /* versoes: a foto muda com a escolha */
+  const slides = $$('.slide');
+  $$('.vbtn').forEach((btn, n) => btn.addEventListener('click', () => {
     $$('.vbtn').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
-    vbike.style.setProperty('--paint', btn.dataset.paint);
+    slides.forEach((sl, k) => sl.classList.toggle('on', k === n));
   }));
-  vbike.style.setProperty('--paint', '#16191E');
 
   /* ---------- partida: segurar para acelerar ---------- */
   const ign = $('#ign'), holdBtn = $('#hold'), tfill = $('#tfill'), needle = $('#needle'), rpmEl = $('#rpm'), holdLabel = $('#hold-label'), live = $('#ign-live');
