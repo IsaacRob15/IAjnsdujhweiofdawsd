@@ -79,7 +79,6 @@ p{margin:0}
 .hero{position:relative;height:600vh}
 .stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#0E1116}
 .room{position:absolute;inset:0;width:100%;height:100%}
-.spot,.beam,.pool,#amb{opacity:0}
 .dust{position:absolute;inset:0;pointer-events:none;opacity:0}
 .dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:#dfe7ef;opacity:.0;animation:mote 14s linear infinite}
 .dust i:nth-child(odd){width:2px;height:2px}
@@ -338,62 +337,38 @@ html.nojs .band.b5{opacity:1;--k:1}
         <linearGradient id="gFloor" x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stop-color="#151A20"/><stop offset="1" stop-color="#0B0E12"/>
         </linearGradient>
-        <linearGradient id="gBeam" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#E9EFF5" stop-opacity=".20"/><stop offset=".7" stop-color="#E9EFF5" stop-opacity=".06"/><stop offset="1" stop-color="#E9EFF5" stop-opacity=".03"/>
-        </linearGradient>
-        <radialGradient id="gPool"><stop offset="0" stop-color="#E9EFF5" stop-opacity=".22"/><stop offset="1" stop-color="#E9EFF5" stop-opacity="0"/></radialGradient>
-        <radialGradient id="gSpot"><stop offset="0" stop-color="#fff"/><stop offset=".55" stop-color="#fff" stop-opacity=".85"/><stop offset="1" stop-color="#fff" stop-opacity="0"/></radialGradient>
-        <linearGradient id="gBody" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#46505C"/><stop offset=".45" stop-color="#222830"/><stop offset="1" stop-color="#101318"/>
-        </linearGradient>
-        <linearGradient id="gMetal" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#9AA3AE"/><stop offset=".5" stop-color="#454C56"/><stop offset="1" stop-color="#1D2127"/>
-        </linearGradient>
-        <linearGradient id="gGlass" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stop-color="#BCD0E2" stop-opacity=".38"/><stop offset="1" stop-color="#BCD0E2" stop-opacity=".08"/>
-        </linearGradient>
-        <linearGradient id="gFade" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#fff" stop-opacity=".9"/><stop offset="1" stop-color="#fff" stop-opacity="0"/>
-        </linearGradient>
-        <filter id="fGlow" x="-50%" y="-200%" width="200%" height="500%"><feGaussianBlur stdDeviation="5"/></filter>
-        <mask id="lit" maskUnits="userSpaceOnUse" x="0" y="0" width="1600" height="900">
-          <rect width="1600" height="900" fill="#2a2a2a"/>
-          <ellipse class="spot" id="s1" cx="574" cy="520" rx="270" ry="300" fill="url(#gSpot)"/>
-          <ellipse class="spot" id="s2" cx="810" cy="455" rx="250" ry="290" fill="url(#gSpot)"/>
-          <ellipse class="spot" id="s3" cx="1066" cy="520" rx="270" ry="300" fill="url(#gSpot)"/>
-          <rect id="amb" width="1600" height="900" fill="#fff"/>
-        </mask>
-        <mask id="reflFade" maskUnits="userSpaceOnUse" x="0" y="730" width="1600" height="170">
-          <rect x="0" y="730" width="1600" height="170" fill="url(#gFade)"/>
-        </mask>
-
         <radialGradient id="gEdge" cx="50%" cy="50%" r="50%">
-          <stop offset="0" stop-color="#fff"/><stop offset=".62" stop-color="#fff"/><stop offset="1" stop-color="#000"/>
+          <stop offset="0" stop-color="#fff"/><stop offset=".78" stop-color="#fff"/><stop offset="1" stop-color="#000"/>
         </radialGradient>
-        <mask id="photoFade" maskUnits="userSpaceOnUse" x="500" y="150" width="600" height="600">
-          <rect x="500" y="150" width="600" height="600" fill="url(#gEdge)"/>
+        <mask id="photoFade" maskUnits="userSpaceOnUse" x="593" y="140" width="414" height="621">
+          <rect x="593" y="140" width="414" height="621" fill="url(#gEdge)"/>
         </mask>
+        <radialGradient id="gHalo"><stop offset="0" stop-color="#FFF6C8" stop-opacity=".95"/><stop offset=".25" stop-color="#FFE98A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD84A" stop-opacity="0"/></radialGradient>
+        <radialGradient id="gSpill"><stop offset="0" stop-color="#FFEFA8" stop-opacity=".5"/><stop offset="1" stop-color="#FFEFA8" stop-opacity="0"/></radialGradient>
+        <linearGradient id="gFlare" x1="0" x2="1"><stop offset="0" stop-color="#FFF1B0" stop-opacity="0"/><stop offset=".5" stop-color="#FFF6D0" stop-opacity=".9"/><stop offset="1" stop-color="#FFF1B0" stop-opacity="0"/></linearGradient>
+        <filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
+        <clipPath id="eyeClip">
+          <ellipse cx="750.5" cy="403.5" rx="27" ry="15" transform="rotate(14 750.5 403.5)"/>
+          <ellipse cx="861.5" cy="406" rx="27" ry="15" transform="rotate(-14 861.5 406)"/>
+        </clipPath>
       </defs>
 
       <rect width="1600" height="730" fill="url(#gWall)"/>
       <rect y="730" width="1600" height="170" fill="url(#gFloor)"/>
       <path d="M0 730.5H1600" stroke="#2A313A" stroke-width="1"/>
-
-      <g id="beams">
-        <g class="beam" id="b1"><polygon points="538,0 610,0 830,730 318,730" fill="url(#gBeam)" opacity=".55"/><polygon points="556,0 592,0 744,730 404,730" fill="url(#gBeam)"/></g>
-        <g class="beam" id="b2"><polygon points="774,0 846,0 1066,730 554,730" fill="url(#gBeam)" opacity=".55"/><polygon points="792,0 828,0 980,730 640,730" fill="url(#gBeam)"/></g>
-        <g class="beam" id="b3"><polygon points="1030,0 1102,0 1322,730 810,730" fill="url(#gBeam)" opacity=".55"/><polygon points="1048,0 1084,0 1236,730 896,730" fill="url(#gBeam)"/></g>
-      </g>
-      <ellipse class="pool" id="p1" cx="574" cy="738" rx="300" ry="34" fill="url(#gPool)"/>
-      <ellipse class="pool" id="p2" cx="810" cy="738" rx="300" ry="34" fill="url(#gPool)"/>
-      <ellipse class="pool" id="p3" cx="1066" cy="738" rx="300" ry="34" fill="url(#gPool)"/>
+      <ellipse id="spill" cx="806" cy="742" rx="330" ry="40" fill="url(#gSpill)" opacity="0"/>
 
       <g id="cam">
-        <g mask="url(#lit)">
-          <g mask="url(#reflFade)" opacity=".18" transform="translate(0 1462) scale(1 -1)">
-            <image href="assets/moto-preta.webp" x="500" y="150" width="600" height="600" preserveAspectRatio="xMidYMid slice" mask="url(#photoFade)"/>
-          </g>
-          <image href="assets/moto-preta.webp" x="500" y="150" width="600" height="600" preserveAspectRatio="xMidYMid slice" mask="url(#photoFade)"/>
+        <image id="photo" href="assets/moto-frente.webp" x="593" y="140" width="414" height="621" preserveAspectRatio="xMidYMid slice" mask="url(#photoFade)"/>
+        <g id="eyes" clip-path="url(#eyeClip)" opacity="0">
+          <image href="assets/moto-frente.webp" x="593" y="140" width="414" height="621" preserveAspectRatio="xMidYMid slice"/>
+        </g>
+        <g id="glow" opacity="0" style="mix-blend-mode:screen">
+          <ellipse cx="750.5" cy="403.5" rx="150" ry="95" fill="url(#gHalo)" opacity=".55"/>
+          <ellipse cx="861.5" cy="406" rx="150" ry="95" fill="url(#gHalo)" opacity=".55"/>
+          <ellipse cx="750.5" cy="403.5" rx="30" ry="15" transform="rotate(14 750.5 403.5)" fill="#FFF8D6" filter="url(#fSoft)" opacity=".85"/>
+          <ellipse cx="861.5" cy="406" rx="30" ry="15" transform="rotate(-14 861.5 406)" fill="#FFF8D6" filter="url(#fSoft)" opacity=".85"/>
+          <rect x="560" y="403" width="492" height="4" rx="2" fill="url(#gFlare)" opacity=".6"/>
         </g>
       </g>
     </svg>
@@ -421,8 +396,8 @@ html.nojs .band.b5{opacity:1;--k:1}
       <p class="sub meta">Até 37% mais pressão aerodinâmica que a geração anterior.</p>
     </div>
     <div class="band left b4 fx-scatter" data-a="0.64" data-b="0.80">
-      <span class="kicker meta">03 · Traseira</span>
-      <h2 class="split">Akrapovič de série.</h2>
+      <span class="kicker meta">03 · Presença</span>
+      <h2 class="split">Feita para ser vista.</h2>
       <p class="sub meta">E feita no Brasil, em Manaus. A BMW mais potente montada aqui.</p>
     </div>
     <div class="band center b5 fx-rise" data-a="0.84" data-b="1">
@@ -432,7 +407,7 @@ html.nojs .band.b5{opacity:1;--k:1}
     </div>
 
     <div class="cue" id="cue" aria-hidden="true">Role<span></span></div>
-    <div class="hud" id="hud" aria-hidden="true">Luzes 0/3</div>
+    <div class="hud" id="hud" aria-hidden="true">Farol apagado</div>
   </div>
 </header>
 
@@ -672,34 +647,31 @@ html.nojs .band.b5{opacity:1;--k:1}
     ramp: el.dataset.ramp ? parseFloat(el.dataset.ramp) : 0, op: -1, k: -1, on: null
   }));
   const last = bands.length - 1;
-  const S = ['s1', 's2', 's3'].map(id => $('#' + id));
-  const B = ['b1', 'b2', 'b3'].map(id => $('#' + id));
-  const P = ['p1', 'p2', 'p3'].map(id => $('#' + id));
-  const amb = $('#amb'), cam = $('#cam'), dust = $('#dust'), cue = $('#cue'), hud = $('#hud');
-  const LIGHTS = [[0.15, 0.24], [0.37, 0.46], [0.59, 0.68]];
+  const photo = $('#photo'), eyes = $('#eyes'), glow = $('#glow'), spill = $('#spill');
+  const cam = $('#cam'), dust = $('#dust'), cue = $('#cue'), hud = $('#hud');
   const cache = new Map();
   function setOp(el, v) { const o = cache.get(el); if (o === undefined || Math.abs(o - v) > 0.003) { cache.set(el, v); el.style.opacity = v.toFixed(3); } }
 
   let lastScale = -1, lastHud = '', lastHudAt = 0, dustLive = null;
   function updateScene(p) {
-    let maxL = 0, count = 0;
-    LIGHTS.forEach(([e0, e1], i) => {
-      const l = smoothstep(p, e0, e1); maxL = Math.max(maxL, l); if (l > 0.5) count++;
-      setOp(S[i], l); setOp(B[i], l * (1 - 0.55 * smoothstep(p, 0.8, 0.92))); setOp(P[i], l);
-    });
-    const a = smoothstep(p, 0.79, 0.9);
-    setOp(amb, a * 0.62);
-    setOp(dust, maxL * 0.9);
+    // o farol liga em dois tempos: um estalo fraco, depois a luz inteira
+    const ig = 0.4 * smoothstep(p, 0.13, 0.19) + 0.6 * smoothstep(p, 0.23, 0.34);
+    const lit = smoothstep(p, 0.34, 0.86);
+    setOp(eyes, ig);
+    setOp(glow, ig);
+    setOp(spill, ig);
+    setOp(photo, 0.1 + 0.9 * lit);
+    setOp(dust, ig * 0.85);
     setOp(cue, 1 - smoothstep(p, 0.02, 0.07));
-    const s = 1 + 0.05 * p;
+    const s = 1 + 0.1 * p;
     if (Math.abs(s - lastScale) > 0.0004) {
       lastScale = s;
-      cam.setAttribute('transform', `translate(800 520) scale(${s.toFixed(4)}) translate(-800 -520)`);
+      cam.setAttribute('transform', `translate(806 440) scale(${s.toFixed(4)}) translate(-806 -440)`);
     }
-    const live = maxL > 0.02;
+    const live = ig > 0.02;
     if (live !== dustLive) { dustLive = live; dust.classList.toggle('live', live); }
     const now = performance.now();
-    const label = a > 0.5 ? 'Showroom aceso' : 'Luzes ' + count + '/3';
+    const label = ig > 0.95 ? 'Farol aceso' : ig > 0.02 ? 'Farol ligando' : 'Farol apagado';
     if (label !== lastHud && now - lastHudAt > 100) { lastHud = label; lastHudAt = now; hud.textContent = label; }
   }
 
