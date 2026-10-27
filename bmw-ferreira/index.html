@@ -83,20 +83,24 @@ p{margin:0}
 .dust i{position:absolute;width:3px;height:3px;border-radius:50%;background:#dfe7ef;opacity:.0;animation:mote 14s linear infinite}
 .dust i:nth-child(odd){width:2px;height:2px}
 @keyframes mote{0%{transform:translate(0,0);opacity:0}15%{opacity:.5}85%{opacity:.35}100%{transform:translate(18px,-120px);opacity:0}}
+.tr{stroke-dasharray:1 1;stroke-dashoffset:calc(1 - var(--tr,1))}
 .scrim{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse 120% 90% at 50% 55%,rgba(10,12,16,0) 40%,rgba(10,12,16,.62) 100%)}
-.band{position:absolute;z-index:2;top:clamp(84px,14vh,140px);width:min(560px,40vw);opacity:0;text-shadow:var(--tshadow);pointer-events:none}
+.band{position:absolute;z-index:2;top:clamp(84px,14vh,140px);width:min(520px,31vw);opacity:0;text-shadow:var(--tshadow);pointer-events:none}
 .band.on{pointer-events:auto}
-.band::before{content:"";position:absolute;inset:-22% -18%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 74% 62% at 50% 50%,rgba(5,6,9,.62) 0%,rgba(5,6,9,.42) 46%,rgba(5,6,9,0) 76%)}
-.band.left{left:clamp(16px,6vw,96px)}
-.band.right{right:clamp(16px,6vw,96px);text-align:right}
+.band::before{content:"";position:absolute;inset:-22% -18%;z-index:-1;pointer-events:none;opacity:calc(.25 + .75*var(--k,1));background:radial-gradient(ellipse 80% 66% at 50% 50%,rgba(5,6,9,.78) 0%,rgba(5,6,9,.6) 50%,rgba(5,6,9,0) 82%)}
+.band.b3::before,.band.b4::before{background:radial-gradient(ellipse 82% 68% at 50% 50%,rgba(5,6,9,.86) 0%,rgba(5,6,9,.66) 52%,rgba(5,6,9,0) 84%)}
+.band.left{left:clamp(16px,4vw,72px)}
+.band.right{right:clamp(16px,4vw,72px);text-align:right}
 .band.center{left:50%;transform:translateX(-50%);text-align:center;width:min(760px,86vw)}
 .band .kicker{display:block;margin-bottom:14px;color:#B9BFC6}
-.band h2,.band .h{font-size:clamp(30px,3.6vw,56px);font-family:var(--display);font-stretch:125%;font-weight:300;line-height:1.08;letter-spacing:-.01em}
+.band h2,.band .h{font-size:clamp(28px,3.2vw,50px);font-family:var(--display);font-stretch:125%;font-weight:300;line-height:1.08;letter-spacing:-.01em}
 .band.center h2{font-size:clamp(30px,3.7vw,58px)}
-.band.b5{top:0;bottom:0;left:0;right:0;width:auto;transform:none;display:flex;flex-direction:column;align-items:center;justify-content:space-between;padding:clamp(92px,12vh,124px) 16px clamp(44px,7vh,72px)}
-.band.b5 .top{width:min(820px,100%)}
-.band.b5::before{inset:0;background:radial-gradient(ellipse 46% 30% at 50% 18%,rgba(5,6,9,.66) 0%,rgba(5,6,9,.42) 50%,rgba(5,6,9,0) 80%)}
-.band.b5 .cta{margin-top:0}
+.band.b5{top:0;bottom:0;left:0;right:0;width:auto;transform:none;display:grid;grid-template-columns:1fr 40vw 1fr;grid-template-rows:auto auto 1fr;align-content:start;text-align:left;padding:clamp(92px,12vh,124px) clamp(16px,5vw,80px) 0}
+.band.b5 .top{display:contents}
+.band.b5 h2{grid-column:1;grid-row:1;font-size:clamp(28px,3.2vw,50px)}
+.band.b5 .sub{grid-column:3;grid-row:1;text-align:right;margin:0 0 0 auto;align-self:start;max-width:30ch}
+.band.b5 .cta{grid-column:3;grid-row:2;justify-content:flex-end;margin-top:28px}
+.band.b5::before{inset:0;background:radial-gradient(ellipse 34% 40% at 17% 22%,rgba(5,6,9,.78) 0%,rgba(5,6,9,.52) 55%,rgba(5,6,9,0) 100%),radial-gradient(ellipse 34% 40% at 83% 24%,rgba(5,6,9,.78) 0%,rgba(5,6,9,.52) 55%,rgba(5,6,9,0) 100%)}
 .band .h strong,.band h2 strong{font-weight:600}
 .band p.sub{margin-top:16px;font-size:clamp(15px,1.2vw,18px);color:#C9CDD2;max-width:42ch}
 .band.right p.sub{margin-left:auto}
@@ -126,7 +130,13 @@ p{margin:0}
   .band,.band.left,.band.right{left:16px;right:16px;width:auto;text-align:left;top:clamp(86px,12vh,120px)}
   .band.right p.sub{margin-left:0}
   .band h2,.band .h{font-size:clamp(28px,8vw,40px)}
-  .band.center h2{font-size:clamp(25px,7vw,40px)}
+  .band.b5{display:flex;flex-direction:column;align-items:center;justify-content:space-between;text-align:center;padding:clamp(92px,12vh,124px) 16px clamp(44px,7vh,72px)}
+  .band.b5 .top{display:block;width:min(820px,100%)}
+  .band.b5 h2{font-size:clamp(25px,7vw,40px)}
+  .band.b5 .sub{margin:16px auto 0;text-align:center;max-width:42ch}
+  .band.b5 .cta{justify-content:center;margin-top:0}
+  .band.b5::before{background:radial-gradient(ellipse 80% 24% at 50% 15%,rgba(5,6,9,.74) 0%,rgba(5,6,9,.5) 55%,rgba(5,6,9,0) 100%)}
+
   .hud{display:none}
 }
 
@@ -340,37 +350,46 @@ html.nojs .band.b5{opacity:1;--k:1}
         <radialGradient id="gEdge" cx="50%" cy="50%" r="50%">
           <stop offset="0" stop-color="#fff"/><stop offset=".78" stop-color="#fff"/><stop offset="1" stop-color="#000"/>
         </radialGradient>
-        <mask id="photoFade" maskUnits="userSpaceOnUse" x="593" y="140" width="414" height="621">
-          <rect x="593" y="140" width="414" height="621" fill="url(#gEdge)"/>
+        <mask id="photoFade" maskUnits="userSpaceOnUse" x="0" y="0" width="452" height="678">
+          <rect width="452" height="678" fill="url(#gEdge)"/>
         </mask>
-        <radialGradient id="gHalo"><stop offset="0" stop-color="#FFF6C8" stop-opacity=".95"/><stop offset=".25" stop-color="#FFE98A" stop-opacity=".55"/><stop offset="1" stop-color="#FFD84A" stop-opacity="0"/></radialGradient>
+        <mask id="traceMask" maskUnits="userSpaceOnUse" x="100" y="240" width="260" height="100">
+          <path class="tr" pathLength="1" d="M150.5 271.5C153 281 158 290 163 296C167 300 174 302.5 184 304L195 304.5" fill="none" stroke="#fff" stroke-width="7"/>
+          <path class="tr" pathLength="1" d="M313 272C310 282 305 290 299 295.5C294 299.5 286 303 277 304.5L268 304" fill="none" stroke="#fff" stroke-width="7"/>
+        </mask>
+        <radialGradient id="gHalo"><stop offset="0" stop-color="#FFF6C8" stop-opacity=".9"/><stop offset=".28" stop-color="#FFE98A" stop-opacity=".5"/><stop offset="1" stop-color="#FFD84A" stop-opacity="0"/></radialGradient>
         <radialGradient id="gSpill"><stop offset="0" stop-color="#FFEFA8" stop-opacity=".5"/><stop offset="1" stop-color="#FFEFA8" stop-opacity="0"/></radialGradient>
         <linearGradient id="gFlare" x1="0" x2="1"><stop offset="0" stop-color="#FFF1B0" stop-opacity="0"/><stop offset=".5" stop-color="#FFF6D0" stop-opacity=".9"/><stop offset="1" stop-color="#FFF1B0" stop-opacity="0"/></linearGradient>
-        <filter id="fSoft" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="3"/></filter>
-        <clipPath id="eyeClip">
-          <ellipse cx="750.5" cy="403.5" rx="27" ry="15" transform="rotate(14 750.5 403.5)"/>
-          <ellipse cx="861.5" cy="406" rx="27" ry="15" transform="rotate(-14 861.5 406)"/>
-        </clipPath>
+        <filter id="fSoft" x="-20%" y="-60%" width="140%" height="220%"><feGaussianBlur stdDeviation=".8"/></filter>
+        <filter id="fBloom" x="-30%" y="-100%" width="160%" height="300%"><feGaussianBlur stdDeviation="4"/></filter>
       </defs>
 
-      <rect width="1600" height="730" fill="url(#gWall)"/>
-      <rect y="730" width="1600" height="170" fill="url(#gFloor)"/>
-      <path d="M0 730.5H1600" stroke="#2A313A" stroke-width="1"/>
-      <ellipse id="spill" cx="806" cy="742" rx="330" ry="40" fill="url(#gSpill)" opacity="0"/>
+      <rect width="1600" height="860" fill="url(#gWall)"/>
+      <rect y="860" width="1600" height="40" fill="url(#gFloor)"/>
+      <path d="M0 860.5H1600" stroke="#2A313A" stroke-width="1"/>
 
       <g id="cam">
-        <image id="photo" href="assets/moto-frente.webp" x="593" y="140" width="414" height="621" preserveAspectRatio="xMidYMid slice" mask="url(#photoFade)"/>
-        <g id="eyes" clip-path="url(#eyeClip)" opacity="0">
-          <image href="assets/moto-frente.webp" x="593" y="140" width="414" height="621" preserveAspectRatio="xMidYMid slice"/>
-        </g>
-        <g id="glow" opacity="0" style="mix-blend-mode:screen">
-          <ellipse cx="750.5" cy="403.5" rx="150" ry="95" fill="url(#gHalo)" opacity=".55"/>
-          <ellipse cx="861.5" cy="406" rx="150" ry="95" fill="url(#gHalo)" opacity=".55"/>
-          <ellipse cx="750.5" cy="403.5" rx="30" ry="15" transform="rotate(14 750.5 403.5)" fill="#FFF8D6" filter="url(#fSoft)" opacity=".85"/>
-          <ellipse cx="861.5" cy="406" rx="30" ry="15" transform="rotate(-14 861.5 406)" fill="#FFF8D6" filter="url(#fSoft)" opacity=".85"/>
-          <rect x="560" y="403" width="492" height="4" rx="2" fill="url(#gFlare)" opacity=".6"/>
+        <g transform="translate(500 60) scale(1.3274)">
+          <image id="photo" href="assets/moto-frente.webp" width="452" height="678" mask="url(#photoFade)"/>
+          <g mask="url(#traceMask)"><image href="assets/moto-frente.webp" width="452" height="678"/></g>
+          <g id="bloom" opacity="1" style="mix-blend-mode:screen">
+            <ellipse cx="172" cy="288" rx="105" ry="64" fill="url(#gHalo)" opacity=".5"/>
+            <ellipse cx="293" cy="291" rx="105" ry="64" fill="url(#gHalo)" opacity=".5"/>
+            <ellipse cx="174" cy="288" rx="30" ry="13" transform="rotate(24 174 288)" fill="url(#gHalo)" opacity=".7"/>
+            <ellipse cx="291" cy="291" rx="30" ry="13" transform="rotate(-24 291 291)" fill="url(#gHalo)" opacity=".7"/>
+            <rect x="30" y="289" width="392" height="2.4" rx="1.2" fill="url(#gFlare)" opacity=".55"/>
+          </g>
+          <g id="glow" opacity="1" style="mix-blend-mode:screen">
+            <path class="tr" pathLength="1" d="M150.5 271.5C153 281 158 290 163 296C167 300 174 302.5 184 304L195 304.5" fill="none" stroke="#FFE98A" stroke-width="9" stroke-linecap="round" filter="url(#fBloom)" opacity=".75"/>
+            <path class="tr" pathLength="1" d="M313 272C310 282 305 290 299 295.5C294 299.5 286 303 277 304.5L268 304" fill="none" stroke="#FFE98A" stroke-width="9" stroke-linecap="round" filter="url(#fBloom)" opacity=".75"/>
+            <path id="gL" class="tr" pathLength="1" d="M150.5 271.5C153 281 158 290 163 296C167 300 174 302.5 184 304L195 304.5" fill="none" stroke="#FFF8D6" stroke-width="2.6" stroke-linecap="round" filter="url(#fSoft)"/>
+            <path id="gR" class="tr" pathLength="1" d="M313 272C310 282 305 290 299 295.5C294 299.5 286 303 277 304.5L268 304" fill="none" stroke="#FFF8D6" stroke-width="2.6" stroke-linecap="round" filter="url(#fSoft)"/>
+            <circle id="sL" r="6" fill="url(#gHalo)" opacity="0"/>
+            <circle id="sR" r="6" fill="url(#gHalo)" opacity="0"/>
+          </g>
         </g>
       </g>
+      <ellipse id="spill" cx="800" cy="872" rx="380" ry="30" fill="url(#gSpill)" opacity="0"/>
     </svg>
 
     <div class="dust" id="dust" aria-hidden="true">
@@ -395,7 +414,7 @@ html.nojs .band.b5{opacity:1;--k:1}
       <h2 class="split">Asas que seguram a moto no chão.</h2>
       <p class="sub meta">Até 37% mais pressão aerodinâmica que a geração anterior.</p>
     </div>
-    <div class="band left b4 fx-scatter" data-a="0.64" data-b="0.80">
+    <div class="band right b4 fx-scatter" data-a="0.64" data-b="0.80">
       <span class="kicker meta">03 · Presença</span>
       <h2 class="split">Feita para ser vista.</h2>
       <p class="sub meta">E feita no Brasil, em Manaus. A BMW mais potente montada aqui.</p>
@@ -647,31 +666,43 @@ html.nojs .band.b5{opacity:1;--k:1}
     ramp: el.dataset.ramp ? parseFloat(el.dataset.ramp) : 0, op: -1, k: -1, on: null
   }));
   const last = bands.length - 1;
-  const photo = $('#photo'), eyes = $('#eyes'), glow = $('#glow'), spill = $('#spill');
+  const photo = $('#photo'), bloom = $('#bloom'), glow = $('#glow'), spill = $('#spill');
+  const gL = $('#gL'), gR = $('#gR'), sL = $('#sL'), sR = $('#sR');
+  const lenL = gL.getTotalLength(), lenR = gR.getTotalLength();
   const cam = $('#cam'), dust = $('#dust'), cue = $('#cue'), hud = $('#hud');
   const cache = new Map();
   function setOp(el, v) { const o = cache.get(el); if (o === undefined || Math.abs(o - v) > 0.003) { cache.set(el, v); el.style.opacity = v.toFixed(3); } }
 
-  let lastScale = -1, lastHud = '', lastHudAt = 0, dustLive = null;
+  let lastScale = -1, lastTr = -1, lastHud = '', lastHudAt = 0, dustLive = null;
   function updateScene(p) {
-    // o farol liga em dois tempos: um estalo fraco, depois a luz inteira
-    const ig = 0.4 * smoothstep(p, 0.13, 0.19) + 0.6 * smoothstep(p, 0.23, 0.34);
+    // a luz percorre o desenho do farol (de fora para o centro), depois o brilho se espalha
+    const tr = smoothstep(p, 0.12, 0.3);
+    const bl = smoothstep(p, 0.22, 0.36);
     const lit = smoothstep(p, 0.34, 0.86);
-    setOp(eyes, ig);
-    setOp(glow, ig);
-    setOp(spill, ig);
+    if (Math.abs(tr - lastTr) > 0.002 || tr === 0 || tr === 1) {
+      lastTr = tr;
+      room.style.setProperty('--tr', tr.toFixed(4));
+      const a = tr > 0.003 && tr < 0.985 ? 1 : 0;
+      const pl = gL.getPointAtLength(tr * lenL), pr = gR.getPointAtLength(tr * lenR);
+      sL.setAttribute('cx', pl.x.toFixed(2)); sL.setAttribute('cy', pl.y.toFixed(2));
+      sR.setAttribute('cx', pr.x.toFixed(2)); sR.setAttribute('cy', pr.y.toFixed(2));
+      setOp(sL, a); setOp(sR, a);
+    }
+    setOp(bloom, bl);
+    setOp(spill, bl);
+    setOp(glow, tr > 0.004 ? 1 - 0.6 * smoothstep(p, 0.4, 0.7) : 0);
     setOp(photo, 0.1 + 0.9 * lit);
-    setOp(dust, ig * 0.85);
+    setOp(dust, bl * 0.85);
     setOp(cue, 1 - smoothstep(p, 0.02, 0.07));
-    const s = 1 + 0.1 * p;
+    const s = 1 + 0.07 * p;
     if (Math.abs(s - lastScale) > 0.0004) {
       lastScale = s;
-      cam.setAttribute('transform', `translate(806 440) scale(${s.toFixed(4)}) translate(-806 -440)`);
+      cam.setAttribute('transform', `translate(800 442) scale(${s.toFixed(4)}) translate(-800 -442)`);
     }
-    const live = ig > 0.02;
+    const live = bl > 0.02;
     if (live !== dustLive) { dustLive = live; dust.classList.toggle('live', live); }
     const now = performance.now();
-    const label = ig > 0.95 ? 'Farol aceso' : ig > 0.02 ? 'Farol ligando' : 'Farol apagado';
+    const label = tr > 0.985 && bl > 0.95 ? 'Farol aceso' : tr > 0.003 ? 'Farol ligando' : 'Farol apagado';
     if (label !== lastHud && now - lastHudAt > 100) { lastHud = label; lastHudAt = now; hud.textContent = label; }
   }
 
@@ -724,7 +755,7 @@ html.nojs .band.b5{opacity:1;--k:1}
     requestAnimationFrame(step);
   }
 
-  function applyViewBox() { room.setAttribute('viewBox', PORTRAIT.matches ? '370 130 860 700' : '0 0 1600 900'); room.setAttribute('preserveAspectRatio', PORTRAIT.matches ? 'xMidYMid meet' : 'xMidYMid slice'); }
+  function applyViewBox() { room.setAttribute('viewBox', PORTRAIT.matches ? '500 90 600 720' : '0 0 1600 900'); room.setAttribute('preserveAspectRatio', PORTRAIT.matches ? 'xMidYMid meet' : 'xMidYMid slice'); }
   PORTRAIT.addEventListener('change', applyViewBox);
   applyViewBox();
 
